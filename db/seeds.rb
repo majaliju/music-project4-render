@@ -10,6 +10,7 @@ Artist.delete_all
 Venue.delete_all
 Concert.delete_all
 Post.delete_all
+puts "---------------------- Old data removed..."
 
 puts "---------------------- Seeding as we speak..."
 

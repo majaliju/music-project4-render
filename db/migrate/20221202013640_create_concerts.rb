@@ -1,4 +1,4 @@
-class CreateConcerts < ActiveRecord::Migration[7.0]
+class CreateConcerts < ActiveRecord::Migration[6.1]
   def change
     create_table :concerts do |t|
       t.datetime :date
