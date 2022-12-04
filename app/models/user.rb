@@ -9,7 +9,7 @@ class User < ApplicationRecord
 
   has_many :posts
   has_many :concerts, through: :posts
-
+  has_many :artists, through: :concerts
 
 
 end
