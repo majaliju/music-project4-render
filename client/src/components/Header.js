@@ -10,8 +10,8 @@ function Header({ user, setUser, onLogin, onLogout, loggedIn }) {
   }
 
   // TODO
-  //* dropdown should exit as soon as item is clicked
-  //* create a sticky navbar that scrolls along with page
+  //^ dropdown should exit as soon as item is clicked
+  //^ create a sticky navbar that scrolls along with page
 
   return (
     <div>

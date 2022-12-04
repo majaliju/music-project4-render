@@ -38,33 +38,3 @@ function IndividualPost({ eachPost, posts }) {
 }
 
 export default IndividualPost;
-
-{
-  //* the original
-  /* <div class='p-1 shadow-xl bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 rounded-2xl'>
-  <div class='block p-2 sm:p-4 rounded-xl'>
-    <div class='m-2 sm:pr-4'>
-      <h2 class='text-xl font-bold text-gray-900'>
-        {thisPost.for_sale === true ? (
-          <h1 class='text-3xl justify-center'>
-            SELLING {thisPost.how_many_tickets} TICKETS
-          </h1>
-        ) : (
-          <span class='text-3xl justify-center'>
-            LOOKING FOR {thisPost.how_many_tickets} TICKETS
-          </span>
-        )}
-      </h2>
-      <h2 class='mt-2 text-lg text-white'>{thisPost.body}</h2>
-    </div>
-    <h4 class='mt-2 text-lg text-white'>EMAIL: {thisPost.user.email}</h4>
-    <h4 class='mt-2 text-lg text-white'>
-      <button
-        class='btn btn-ghost btn-outline outline-black'
-        onClick={() => navigate(`/concerts/${thisPost.concert.id}`)}>
-        SEE CONCERT INFO
-      </button>
-    </h4>
-  </div>
-</div>; */
-}

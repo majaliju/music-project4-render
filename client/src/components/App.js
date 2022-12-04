@@ -78,14 +78,14 @@ function App() {
     });
   }, []);
 
-  // the onLogin function for SignUp & Login submissions
+  //^ the onLogin function for SignUp & Login submissions
   function onLogin(username) {
     setUser(username);
     setLoggedIn(true);
     getSession();
   }
 
-  // to log the user out
+  //^ to log the user out
   function onLogout() {
     setUser('');
     setLoggedIn(false);
