@@ -31,9 +31,9 @@ function App() {
   const [posts, setPosts] = useState([]);
 
   //TODO
-  //* break search button off into it's own component but fix the routing first to make it smooth
-  //* create an error message for user not found on the Login component if a wrong user renders
-  //* clean up all the props once the app is finished
+  //^ break search button off into it's own component but fix the routing first to make it smooth
+  //^ create an error message for user not found on the Login component if a wrong user renders
+  //^ clean up all the props once the app is finished
 
   useEffect(() => {
     fetch('/artists')
@@ -69,7 +69,7 @@ function App() {
     getPosts();
   }, []);
 
-  //* our initial fetch to get user's ID for maintaining session state
+  //^ our initial fetch to get user's ID for maintaining session state
   useEffect(() => {
     fetch('/me').then((response) => {
       if (response.ok) {
@@ -242,22 +242,3 @@ function App() {
 }
 
 export default App;
-
-// function App() {
-//   return (
-//     <>
-//       <Routes>
-//         <Route path='/' element={<Header />}>
-//           <Route index element={<UsersPage />} />
-//           <Route path='/artists' element={<ArtistsDisplay />} />
-//           <Route path='/concerts' element={<ConcertsDisplay />} />
-//           <Route path='/venues' element={<VenuesDisplay />} />
-//           <Route path='/login' element={<Login />} />
-//           <Route path='*' element={<NotFound />} />
-//         </Route>
-//       </Routes>
-//     </>
-//   );
-// }
-
-// export default App;
