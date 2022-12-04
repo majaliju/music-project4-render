@@ -23,6 +23,7 @@ function CreatePost() {
     }
   }
 
+  //^ HERE IS WHERE USER_ID AND CONCERT_ID MUST BE PASSED INTO IT
   const handleSubmit = (e) => {
     e.preventDefault();
     fetch('/new_post', {

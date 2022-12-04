@@ -84,11 +84,18 @@ function ConcertsDisplay({
                       <h3>{concert.date}</h3>
                       <div class='card-actions justify-end'>
                         <Link
-                          //& should pass here isSelling info, user_id, concert_id
                           to='/createNewPost'
+                          //& state={should pass isSelling, user_id, concert_id}
                           state={{ isSelling: true }}
                           class='btn btn-secondary w-full'>
-                          PLACE A POST TO BUY/SELL
+                          I have tickets to sell
+                        </Link>
+                        <Link
+                          to='/createNewPost'
+                          //& state={should pass isSelling, user_id, concert_id}
+                          state={{ isSelling: false }}
+                          class='btn btn-secondary w-full'>
+                          I'm Looking For Tickets
                         </Link>
                       </div>
                     </div>
