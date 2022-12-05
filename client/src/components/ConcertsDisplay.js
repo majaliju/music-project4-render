@@ -20,6 +20,8 @@ function ConcertsDisplay({
     setSearchTerm('');
   }, [concerts]);
 
+  //^ display an EachConcertCard for the map function, to keep the consistency
+
   return (
     <div class='bg-base-900 py-6 sm:py-8 lg:py-12'>
       <div class='form-control'>
@@ -58,42 +60,7 @@ function ConcertsDisplay({
                 }
               })
               .map((concert) => (
-                <div>
-                  <div
-                    key={concert.id}
-                    class='card w-96 max-w-xs bg-neutral text-neutral-content shadow-xl'>
-                    <div class='card-body p-4 m-2 mx-0 items-center text-center'>
-                      <div class='avatar'>
-                        <div class='w-30 rounded'>
-                          <img
-                            src={concert.artist.image}
-                            alt='a small avatar of the concert'
-                          />
-                        </div>
-                      </div>
-                      <div class='avatar'>
-                        <div class='w-30 rounded'>
-                          <img
-                            src={concert.venue.image}
-                            alt='a small avatar of the concert'
-                          />
-                        </div>
-                      </div>
-                      <h1 class='card-title'>{concert.artist.name}</h1>
-                      <h2>{concert.venue.name}</h2>
-                      <h3>{concert.date}</h3>
-                      <div class='card-actions justify-end'>
-                        <Link
-                          //& should pass here isSelling info, user_id, concert_id
-                          to='/createNewPost'
-                          state={{ isSelling: true }}
-                          class='btn btn-secondary w-full'>
-                          PLACE A POST TO BUY/SELL
-                        </Link>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <EachConcertCard concert={concert} posts={posts} />
               ))}
           </div>
         </div>
@@ -103,3 +70,42 @@ function ConcertsDisplay({
 }
 
 export default ConcertsDisplay;
+
+// .map((concert) => (
+//   <div>
+//     <div
+//       key={concert.id}
+//       class='card w-96 max-w-xs bg-neutral text-neutral-content shadow-xl'>
+//       <div class='card-body p-4 m-2 mx-0 items-center text-center'>
+//         <div class='avatar'>
+//           <div class='w-30 rounded'>
+//             <img
+//               src={concert.artist.image}
+//               alt='a small avatar of the concert'
+//             />
+//           </div>
+//         </div>
+//         <div class='avatar'>
+//           <div class='w-30 rounded'>
+//             <img
+//               src={concert.venue.image}
+//               alt='a small avatar of the concert'
+//             />
+//           </div>
+//         </div>
+//         <h1 class='card-title'>{concert.artist.name}</h1>
+//         <h2>{concert.venue.name}</h2>
+//         <h3>{concert.date}</h3>
+//         <div class='card-actions justify-end'>
+//           <Link
+//             //& should pass here isSelling info, user_id, concert_id
+//             to='/createNewPost'
+//             state={{ isSelling: true }}
+//             class='btn btn-secondary w-full'>
+//             PLACE A POST TO BUY/SELL
+//           </Link>
+//         </div>
+//       </div>
+//     </div>
+//   </div>
+// ))}
