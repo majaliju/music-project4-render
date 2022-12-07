@@ -5,26 +5,20 @@ import IndividualPost from './IndividualPost';
 import Loading from './Loading';
 import CreatePost from './CreatePost';
 
-function EachConcertCard({ concert, posts, setPosts, artists, concerts }) {
-  let { id } = useParams();
-
+function EachConcertCard({ concert, posts }) {
   let thisConcertsPosts = posts.filter(
     (post) => parseInt(concert.id) === parseInt(post.concert.id)
   );
 
-  console.log('concert id passed in: ', concert.id);
-  console.log('id via params: ', id);
-  console.log('thisConcertsPosts :', thisConcertsPosts);
-
   const [selling, setSelling] = useState(0);
   const [looking, setLooking] = useState(0);
 
-  //& these 2 blocks of code need serious refactoring; everything that populates selling & looking
-  useEffect(() => {
-    if (concert !== undefined) {
-      getPostType();
-    }
-  }, []);
+  // //& these 2 blocks of code need serious refactoring; everything that populates selling & looking
+  // useEffect(() => {
+  //   if (concert !== undefined) {
+  //     getPostType();
+  //   }
+  // }, []);
 
   function getPostType() {
     // eslint-disable-next-line array-callback-return
@@ -89,11 +83,6 @@ function EachConcertCard({ concert, posts, setPosts, artists, concerts }) {
                       class='btn btn-secondary w-full'>
                       I'm Looking For Tickets
                     </Link>
-                    {/* <Link
-                      to='/concerts'
-                      class='btn btn-outline btn-secondary w-full'>
-                      Go Back
-                    </Link> */}
                   </div>
                 </div>
               </div>
