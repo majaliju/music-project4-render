@@ -15,7 +15,6 @@ import EachConcertCard from './EachConcertCard';
 import EachVenueCard from './EachVenueCard';
 import EachGenreCard from './EachGenreCard';
 import CreatePost from './CreatePost';
-import Footer from './Footer';
 
 function App() {
   const [user, setUser] = useState('');
@@ -31,7 +30,6 @@ function App() {
   const [posts, setPosts] = useState([]);
 
   //TODO
-  //^ break search button off into it's own component but fix the routing first to make it smooth
   //^ create an error message for user not found on the Login component if a wrong user renders
   //^ clean up all the props once the app is finished
 
@@ -39,13 +37,13 @@ function App() {
     fetch('/artists')
       .then((r) => r.json())
       .then((info) => setArtists(info));
-  }, []);
+  }, [concerts]);
 
   useEffect(() => {
     fetch('/venues')
       .then((r) => r.json())
       .then((info) => setVenues(info));
-  }, []);
+  }, [concerts]);
 
   useEffect(() => {
     fetch('/concerts')
@@ -57,7 +55,7 @@ function App() {
     fetch('/genres')
       .then((r) => r.json())
       .then((info) => setGenres(info));
-  }, []);
+  }, [artists]);
 
   function getPosts() {
     fetch('/posts')

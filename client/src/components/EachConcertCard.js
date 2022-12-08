@@ -6,9 +6,9 @@ import Loading from './Loading';
 import CreatePost from './CreatePost';
 
 function EachConcertCard({ concert, posts }) {
-  let thisConcertsPosts = posts.filter(
-    (post) => parseInt(concert.id) === parseInt(post.concert.id)
-  );
+  // let thisConcertsPosts = posts.filter(
+  //   (post) => parseInt(concert.id) === parseInt(post.concert.id)
+  // );
 
   const [selling, setSelling] = useState(0);
   const [looking, setLooking] = useState(0);
@@ -20,16 +20,16 @@ function EachConcertCard({ concert, posts }) {
   //   }
   // }, []);
 
-  function getPostType() {
-    // eslint-disable-next-line array-callback-return
-    thisConcertsPosts.map((each) => {
-      if (each.for_sale === true) {
-        setSelling(selling + 1);
-      } else {
-        setLooking(looking + 1);
-      }
-    });
-  }
+  // function getPostType() {
+  //   // eslint-disable-next-line array-callback-return
+  //   thisConcertsPosts.map((each) => {
+  //     if (each.for_sale === true) {
+  //       setSelling(selling + 1);
+  //     } else {
+  //       setLooking(looking + 1);
+  //     }
+  //   });
+  // }
 
   // TODO
   //^ center the card in the middle of the page
@@ -58,6 +58,7 @@ function EachConcertCard({ concert, posts }) {
                     />
                   </div>
                 </div>
+                ` `
                 <div class='card-body items-center text-center'>
                   <h2 class='card-title'>{concert.artist.name}</h2>
                   <p>at</p>
