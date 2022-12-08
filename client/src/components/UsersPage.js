@@ -19,8 +19,7 @@ function UsersPage({ user, sessionInfo, loggedIn }) {
                 </h1>
                 <p class='mb-5'>Your sessionID is {sessionInfo.session_id}</p>
                 <h2 class='mb-5 text-3xl font-bold'>
-                  HERE ONE DISPLAYS THE USER'S POSTS, BOTH FOR SALE AND
-                  REQUESTING!
+                  -- here is one where the user's posts will display --
                 </h2>
               </div>
             </div>
