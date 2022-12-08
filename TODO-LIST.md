@@ -22,6 +22,12 @@
 ## user related
 - [ ] list out the posts that match the user_id 
 
+## appropriate error messages
+## ERROR MESSAGES & VALIDATIONS ARE KEY!! WILL BE TESTED
+- [ ] make sure there are proper messages for illegal log-in (wrong username, or password, or both)
+- [ ] make sure there's error handling for if a user tries to submit an artist/concert/genre/venue that already exists 
+- [ ] make sure 
+
 ## react related state management
 - [ ] make sure the useEffect dependencies update the right way and that most updates are being handled within the main tables (concerts, posts; or whichever) and then as those update we're updating the appropriate state 
   - [ ] if artist gets updated, the artist state gets updated
