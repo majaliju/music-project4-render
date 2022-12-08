@@ -1,6 +1,6 @@
 import { useNavigate, Link } from 'react-router-dom';
 import { useEffect } from 'react';
-import EachConcertCard from './EachConcertCard';
+import EachConcertCard from '../components/EachConcertCard';
 
 //TODO
 //^ need to configure the date properly for the shows
