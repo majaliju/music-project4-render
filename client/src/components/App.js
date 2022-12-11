@@ -32,7 +32,6 @@ function App() {
 
   //TODO
   //^ create an error message for user not found on the Login component if a wrong user renders
-  //^ clean up all the props once the app is finished
 
   //! dependencies are what need to be checked here
   useEffect(() => {
