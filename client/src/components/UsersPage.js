@@ -1,7 +1,10 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
-function UsersPage({ user, sessionInfo, loggedIn }) {
+function UsersPage({ user, sessionInfo, posts, loggedIn }) {
+  //* show post.user.username == user.username
+  //* the above will be the posts that will render on user's page with the relevant post info
+
   return (
     <div>
       <div>

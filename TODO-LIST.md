@@ -36,3 +36,11 @@
   - [ ] if genre then genre state
   - [ ] if post gets posted-deleted-edit on concert then everything gets updated
   - [ ] 
+
+
+_____
+# INDIVIDUAL COMPONENTS
+## IndividualPost 
+- [ ] create a div attribute that allows the user to edit this post ONLY if their user.username matches the post.user.username
+- [ ] include the user and link to EachUser page, where each users Posts display
+- [ ] do the thing where you can click the link and open up the email app [mailto: ]
