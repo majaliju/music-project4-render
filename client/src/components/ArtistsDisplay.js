@@ -89,3 +89,6 @@ function ArtistsDisplay({ artists, genres, user, searchTerm, setSearchTerm }) {
 }
 
 export default ArtistsDisplay;
+
+// for line 70, 71
+// check if using a Link is better than using a navigate
