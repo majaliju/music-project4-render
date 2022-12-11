@@ -38,13 +38,13 @@ function App() {
     fetch('/artists')
       .then((r) => r.json())
       .then((info) => setArtists(info));
-  }, [concerts]);
+  }, []);
 
   useEffect(() => {
     fetch('/venues')
       .then((r) => r.json())
       .then((info) => setVenues(info));
-  }, [concerts]);
+  }, []);
 
   useEffect(() => {
     fetch('/concerts')
@@ -56,7 +56,7 @@ function App() {
     fetch('/genres')
       .then((r) => r.json())
       .then((info) => setGenres(info));
-  }, [artists]);
+  }, []);
 
   function getPosts() {
     fetch('/posts')
@@ -66,7 +66,7 @@ function App() {
 
   useEffect(() => {
     getPosts();
-  }, []);
+  });
 
   //^ our initial fetch to get user's ID for maintaining session state
   useEffect(() => {
