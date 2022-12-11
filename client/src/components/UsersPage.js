@@ -22,7 +22,7 @@ function UsersPage({ user, sessionInfo, posts, loggedIn }) {
                 </h1>
                 <p class='mb-5'>Your sessionID is {sessionInfo.session_id}</p>
                 <h2 class='mb-5 text-3xl font-bold'>
-                  -- here is one where the user's posts will display --
+                  user's posts display below
                 </h2>
                 {posts
                   .filter((post) => {

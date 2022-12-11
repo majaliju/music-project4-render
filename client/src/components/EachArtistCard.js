@@ -14,37 +14,6 @@ function EachArtistCard({ posts, artists, concerts }) {
     (artist) => parseInt(id) === parseInt(artist.id)
   );
 
-  const [selling, setSelling] = useState(0);
-  const [looking, setLooking] = useState(0);
-  const [upcomingShows, setUpcomingShows] = useState(0);
-
-  //& these 3 blocks of code need serious refactoring; everything that populates selling & looking
-  useEffect(() => {
-    if (thisArtist !== undefined) {
-      getPostType();
-      getShows();
-    }
-  }, []);
-
-  function getPostType() {
-    // eslint-disable-next-line array-callback-return
-    thisArtist.posts.map((each) => {
-      if (each.for_sale === true) {
-        setSelling(selling + 1);
-      } else {
-        setLooking(looking + 1);
-      }
-    });
-  }
-
-  function getShows() {
-    thisArtist.concerts.map((each) => setUpcomingShows(upcomingShows + 1));
-  }
-
-  // TODO
-  //^ center the card in the middle of the page
-  //* potentially remove I have tickets to sell and I'm looking for tickets
-
   return (
     <div>
       <div class='bg-base-900 py-6 sm:py-8 lg:py-'>
@@ -68,18 +37,7 @@ function EachArtistCard({ posts, artists, concerts }) {
                 </div>
                 <div class='card-body items-center text-center'>
                   <h2 class='card-title'>{thisArtist.name}</h2>
-                  <p>
-                    There's {upcomingShows} upcoming concerts listed for{' '}
-                    {thisArtist.name}!
-                  </p>
-                  <div>
-                    <div class='badge badge-primary uppercase'>
-                      {selling} selling
-                    </div>
-                    <div class='badge badge-primary uppercase'>
-                      {looking} looking
-                    </div>
-                  </div>
+
                   <div class='card-actions justify-end'>
                     <Link
                       to='/artists'
