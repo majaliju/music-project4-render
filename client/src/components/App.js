@@ -34,11 +34,12 @@ function App() {
   //^ create an error message for user not found on the Login component if a wrong user renders
   //^ clean up all the props once the app is finished
 
+  //! dependencies are what need to be checked here
   useEffect(() => {
     fetch('/artists')
       .then((r) => r.json())
       .then((info) => setArtists(info));
-  }, []);
+  }, [posts, concerts, genres, venues]);
 
   useEffect(() => {
     fetch('/venues')
@@ -50,7 +51,7 @@ function App() {
     fetch('/concerts')
       .then((r) => r.json())
       .then((info) => setConcerts(info));
-  }, []);
+  }, [artists, venues]);
 
   useEffect(() => {
     fetch('/genres')
@@ -66,7 +67,12 @@ function App() {
 
   useEffect(() => {
     getPosts();
-  });
+  }, []);
+
+  //* check this version with the 2 dependencies
+  // useEffect(() => {
+  //   getPosts();
+  // }, [artists, concerts]);
 
   //^ our initial fetch to get user's ID for maintaining session state
   useEffect(() => {
