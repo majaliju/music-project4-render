@@ -15,6 +15,7 @@ import EachConcertCard from './EachConcertCard';
 import EachVenueCard from './EachVenueCard';
 import EachGenreCard from './EachGenreCard';
 import CreatePost from './CreatePost';
+import EachUser from './EachUser';
 
 function App() {
   const [user, setUser] = useState('');
@@ -214,6 +215,17 @@ function App() {
           element={
             <EachGenreCard
               genres={genres}
+              user={user}
+              searchTerm={searchTerm}
+              setSearchTerm={setSearchTerm}
+            />
+          }
+        />
+        <Route
+          path='/users/:id'
+          element={
+            <EachUser
+              posts={posts}
               user={user}
               searchTerm={searchTerm}
               setSearchTerm={setSearchTerm}
