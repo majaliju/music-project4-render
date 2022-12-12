@@ -11,9 +11,6 @@ function CreatePost({ user }) {
   let isSelling = location.state.isSelling;
   let concertID = location.state.concertID;
 
-  console.log('isSelling: ', isSelling);
-  console.log('concertID: ', concertID);
-
   //* updates for IndividualPost are being acted on artists state (thisArtist.post)
 
   function checkError(response) {
