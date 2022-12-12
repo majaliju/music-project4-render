@@ -14,6 +14,8 @@ function CreatePost({ user }) {
   console.log('isSelling: ', isSelling);
   console.log('concertID: ', concertID);
 
+  //* updates for IndividualPost are being acted on artists state (thisArtist.post)
+
   function checkError(response) {
     if (response.status >= 200 && response.status <= 299) {
       return response.json();
@@ -25,7 +27,7 @@ function CreatePost({ user }) {
     }
   }
 
-  //^ HERE IS WHERE USER_ID AND CONCERT_ID MUST BE PASSED INTO IT
+  //^ make sure null values can't be passed for body or ticket amounts
   const handleSubmit = (e) => {
     e.preventDefault();
     fetch('/new_post', {
@@ -50,7 +52,7 @@ function CreatePost({ user }) {
     navigate(-1);
   };
 
-  // line 47 here needs to be fixed and the post needs to be recorded to the right spot
+  //^ line 47 here needs to be fixed and the post needs to be recorded to the right spot
 
   return (
     <div>
