@@ -50,6 +50,8 @@ function CreatePost({ user }) {
     navigate(-1);
   };
 
+  // line 47 here needs to be fixed and the post needs to be recorded to the right spot
+
   return (
     <div>
       <div class='px-4 py-16 mx-auto max-w-screen-xl sm:px-6 lg:px-8'>

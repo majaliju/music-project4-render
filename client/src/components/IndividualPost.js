@@ -9,9 +9,13 @@ function IndividualPost({ eachPost, posts }) {
     (post) => parseInt(eachPost.id) === parseInt(post.id)
   );
 
+  console.log('thisPost within IndividualPost: ', thisPost);
+
   //^ ESSENTIAL: to create a div attribute that allows the user to edit this post ONLY if their user.username matches the post.user.username
 
   //^ POTENTIAL ESSENTIAL: include the user and link to EachUser page, where each users Posts display
+
+  //^ CONFIGURE THE STYLING ON THE USERNAME
 
   //& EXTRA BONUS: do the thing where you can click the link and open up the email app
 
@@ -22,13 +26,17 @@ function IndividualPost({ eachPost, posts }) {
           <h2 class='text-xl font-bold text-center text-gray-900'>
             {thisPost.for_sale === true ? (
               <h1 class='text-3xl justify-center'>
-                SELLING {thisPost.how_many_tickets} TICKETS
+                {thisPost.user.username} IS SELLING
+                {'' + thisPost.how_many_tickets + ''}
+                TICKETS
               </h1>
             ) : (
-              <span class='text-3xl justify-center'>
-                LOOKING FOR {thisPost.how_many_tickets} TICKETS
-              </span>
+              <h1 class='text-3xl justify-center'>
+                {thisPost.user.username} IS LOOKING FOR
+                {'' + thisPost.how_many_tickets + ''} TICKETS
+              </h1>
             )}
+            <h2 class='text-2xl justify-center'>{thisPost.user.email}</h2>
           </h2>
 
           <p class='mt-2 text-sm text-center  text-gray-500'>{thisPost.body}</p>

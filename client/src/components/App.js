@@ -38,7 +38,7 @@ function App() {
     fetch('/artists')
       .then((r) => r.json())
       .then((info) => setArtists(info));
-  }, [posts, concerts, genres, venues]);
+  }, []);
 
   useEffect(() => {
     fetch('/venues')
@@ -50,7 +50,7 @@ function App() {
     fetch('/concerts')
       .then((r) => r.json())
       .then((info) => setConcerts(info));
-  }, [artists, venues]);
+  }, []);
 
   useEffect(() => {
     fetch('/genres')
