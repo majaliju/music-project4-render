@@ -12,6 +12,7 @@ function CreatePost({ user }) {
   let concertID = location.state.concertID;
 
   console.log('isSelling: ', isSelling);
+  console.log('concertID: ', concertID);
 
   function checkError(response) {
     if (response.status >= 200 && response.status <= 299) {
