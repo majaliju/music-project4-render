@@ -2,9 +2,15 @@ class Post < ApplicationRecord
   belongs_to :user
   belongs_to :concert
 
+  validates :for_sale, presence: :true
+  validates :body, presence: true, length: { minimum: 10, maximum: 254}
+  validates :how_many_tickets, presence: true
+  validates :concert_id, presence: true
+  validates :user_id, presence: true
+    ## make sure how_many_tickets is not less than 1 
+
   ## gotta check about writing validation here 
-  ## make sure for_sale is not less than 1 
-  ## make sure isSelling is either true or false
-  ## make sure body has at least 10 sentences
+
+
 
 end

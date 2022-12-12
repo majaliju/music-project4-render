@@ -23,8 +23,8 @@ function CreatePost({ user, setPosts, posts }) {
       throw response;
     }
   }
+  //^ handle the error message display here as well
 
-  //^ make sure null values can't be passed for body or ticket amounts
   const handleSubmit = (e) => {
     e.preventDefault();
     fetch('/new_post', {
