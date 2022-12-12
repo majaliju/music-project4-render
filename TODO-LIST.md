@@ -35,7 +35,6 @@
   - [ ] if venue, then venue state
   - [ ] if genre then genre state
   - [ ] if post gets posted-deleted-edit on concert then everything gets updated
-  - [ ] 
 
 
 _____

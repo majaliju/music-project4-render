@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 
-function CreatePost() {
+function CreatePost({ user }) {
   const navigate = useNavigate();
   const [body, setBody] = useState('');
   const [ticketAmount, setTicketAmount] = useState('');
@@ -9,6 +9,7 @@ function CreatePost() {
 
   const location = useLocation();
   let isSelling = location.state.isSelling;
+  let concertID = location.state.concertID;
 
   console.log('isSelling: ', isSelling);
 
@@ -36,8 +37,8 @@ function CreatePost() {
         body,
         for_sale: isSelling,
         how_many_tickets: ticketAmount,
-        concert_id: null,
-        user_id: null,
+        concert_id: concertID,
+        user_id: user.id,
       }),
     })
       .then(checkError)
