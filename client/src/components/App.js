@@ -239,14 +239,7 @@ function App() {
         />
         <Route
           path='/createNewPost'
-          element={
-            <CreatePost
-              user={user}
-              concerts={concerts}
-              venues={venues}
-              artists={artists}
-            />
-          }
+          element={<CreatePost user={user} posts={posts} setPosts={setPosts} />}
         />
         <Route path='/login' element={<Login onLogin={onLogin} />} />
         <Route path='/signup' element={<SignUp onLogin={onLogin} />} />

@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 
-function CreatePost({ user }) {
+function CreatePost({ user, setPosts, posts }) {
   const navigate = useNavigate();
   const [body, setBody] = useState('');
   const [ticketAmount, setTicketAmount] = useState('');
