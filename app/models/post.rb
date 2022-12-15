@@ -3,7 +3,7 @@ class Post < ApplicationRecord
   belongs_to :concert
 
   validates :for_sale, presence: :true
-  validates :body, presence: true, length: { minimum: 10, maximum: 254}
+  validates :body, presence: true, length: { in: 10..250 }
   validates :how_many_tickets, presence: true
   validates :concert_id, presence: true
   validates :user_id, presence: true
