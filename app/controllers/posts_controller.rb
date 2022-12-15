@@ -23,7 +23,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    post = Post.create(new_post_params)
+    post = Post.create!(new_post_params)
 
     if post.valid? 
       render json: post, status: 200
