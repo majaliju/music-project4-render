@@ -20,6 +20,7 @@ function CreatePost({ user, setPosts, posts }) {
       console.log('response: ', response);
       console.log('response.status: ', response.status);
       console.log('response.statusText: ', response.statusText);
+      setError(response.statusText);
       throw response;
     }
   }
@@ -44,9 +45,9 @@ function CreatePost({ user, setPosts, posts }) {
       .then(checkError)
       .then((item) => {
         console.log(item);
-      })
-      .catch((err) => setError(err));
-    navigate(-1);
+        navigate(-1);
+      });
+    // .catch((err) => setError(err));
   };
 
   //^ line 47 here needs to be fixed and the post needs to be recorded to the right spot
@@ -58,7 +59,11 @@ function CreatePost({ user, setPosts, posts }) {
           <h1 class='text-2xl font-bold text-center text-indigo-600 sm:text-3xl'>
             TICKET POST
           </h1>
-
+          {error !== '' && (
+            <h1 class='text-2xl font-bold text-center text-indigo-600 sm:text-3xl'>
+              {error}
+            </h1>
+          )}
           <form class='p-8 mt-2 mb-0 rounded-lg shadow-2xl space-y-4'>
             <div>
               <input
