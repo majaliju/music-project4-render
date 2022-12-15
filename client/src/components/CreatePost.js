@@ -20,8 +20,8 @@ function CreatePost({ user, setPosts, posts }) {
       console.log('response: ', response);
       console.log('response.status: ', response.status);
       console.log('response.statusText: ', response.statusText);
-      // setError(response);
-      // throw response;
+      setError(response.statusText);
+      throw response;
     }
   }
   //^ handle the error message display here as well
@@ -46,8 +46,8 @@ function CreatePost({ user, setPosts, posts }) {
       .then((item) => {
         console.log(item);
         navigate(-1);
-      })
-      .catch((err) => setError(err));
+      });
+    // .catch((err) => setError(err));
   };
 
   //^ line 47 here needs to be fixed and the post needs to be recorded to the right spot
