@@ -29,6 +29,7 @@ function App() {
   const [artists, setArtists] = useState([]);
   const [concerts, setConcerts] = useState([]);
   const [posts, setPosts] = useState([]);
+  const [users, setUsers] = useState('');
 
   //TODO
   //^ create an error message for user not found on the Login component if a wrong user renders
@@ -57,6 +58,12 @@ function App() {
     fetch('/genres')
       .then((r) => r.json())
       .then((info) => setGenres(info));
+  }, []);
+
+  useEffect(() => {
+    fetch('/users')
+      .then((r) => r.json())
+      .then((info) => setUsers(info));
   }, []);
 
   useEffect(() => {
@@ -142,6 +149,7 @@ function App() {
               concerts={concerts}
               posts={posts}
               setPosts={setPosts}
+              users={users}
               user={user}
             />
           }

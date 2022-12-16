@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get '/venues', to: "venues#index"
   get '/concerts', to: "concerts#index"
   get '/posts', to: "posts#index"
+  get '/users', to: "users#index"
 
   # #& get info about the artist's upcoming shows
   # get '/upcoming_shows', to: "artists#upcoming_shows"

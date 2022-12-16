@@ -2,12 +2,12 @@ import { useState } from 'react';
 import EachUser from './EachUser';
 import { Link, useNavigate } from 'react-router-dom';
 
-function IndividualPost({ eachPost, posts }) {
+function IndividualPost({ eachPost, users }) {
   let navigate = useNavigate();
 
-  // const thisPost = posts.find(
-  //   (post) => parseInt(eachPost.id) === parseInt(post.id)
-  // );
+  const thisUser = users.find(
+    (thisOne) => parseInt(thisOne.id) === parseInt(eachPost.user_id)
+  );
 
   console.log('eachPost within IndividualPost: ', eachPost);
 
@@ -29,17 +29,17 @@ function IndividualPost({ eachPost, posts }) {
           <h2 class='text-xl font-bold text-center text-gray-900'>
             {eachPost.for_sale === true ? (
               <h1 class='text-3xl justify-center'>
-                {eachPost.user.username} IS SELLING
+                {thisUser.username} IS SELLING
                 {'' + eachPost.how_many_tickets + ''}
                 TICKETS
               </h1>
             ) : (
               <h1 class='text-3xl justify-center'>
-                {eachPost.user.username} IS LOOKING FOR
+                {thisUser.username} IS LOOKING FOR
                 {'' + eachPost.how_many_tickets + ''} TICKETS
               </h1>
             )}
-            <h2 class='text-2xl justify-center'>{eachPost.user.email}</h2>
+            <h2 class='text-2xl justify-center'>{thisUser.email}</h2>
           </h2>
 
           <p class='mt-2 text-sm text-center  text-gray-500'>{eachPost.body}</p>

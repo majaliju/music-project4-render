@@ -56,7 +56,7 @@ function EachArtistCard({ users, posts, artists, concerts }) {
                 ALL POSTS
               </h2>
               {thisArtist.posts.map((each) => (
-                <IndividualPost eachPost={each} users={users} />
+                <IndividualPost eachPost={each} />
               ))}
               {/* {thisArtist.posts.map((each) =>
                 console.log("'each' within thisartist.posts.map(each)): ", each)
