@@ -41,13 +41,21 @@ function EachConcertCard({ concert, posts }) {
                   <div class='card-actions justify-end'>
                     <Link
                       to='/createNewPost'
-                      state={{ isSelling: true, concertID: concert.id }}
+                      state={{
+                        isSelling: true,
+                        concertID: concert.id,
+                        artistID: concert.artist_id,
+                      }}
                       class='btn btn-secondary w-full'>
                       I have tickets to sell
                     </Link>
                     <Link
                       to='/createNewPost'
-                      state={{ isSelling: false, concertID: concert.id }}
+                      state={{
+                        isSelling: false,
+                        concertID: concert.id,
+                        artistID: concert.artist_id,
+                      }}
                       class='btn btn-secondary w-full'>
                       I'm Looking For Tickets
                     </Link>

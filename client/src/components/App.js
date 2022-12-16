@@ -52,7 +52,7 @@ function App() {
     fetch('/concerts')
       .then((r) => r.json())
       .then((info) => setConcerts(info));
-  }, []);
+  }, [posts]);
 
   useEffect(() => {
     fetch('/genres')

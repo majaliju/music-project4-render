@@ -1,25 +1,29 @@
 import { useState, useEffect } from 'react';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useNavigate, useLocation, Link } from 'react-router-dom';
 
 function CreatePost({ user, concerts, setPosts, posts }) {
   const navigate = useNavigate();
   const [body, setBody] = useState('');
   const [ticketAmount, setTicketAmount] = useState(0);
   const [error, setError] = useState('');
+  const [success, setSuccess] = useState('');
 
   const location = useLocation();
   let isSelling = location.state.isSelling;
   let concertID = location.state.concertID;
-
-  console.log('isSelling: ', isSelling);
-  console.log('concertID: ', concertID);
-  console.log('userID', user.id);
+  let artistID = location.state.artistID;
 
   //* updates for IndividualPost are being acted on artists state (thisArtist.post)
+
+  useEffect(() => {
+    setSuccess('');
+    setError('');
+  }, []);
 
   function checkError(response) {
     if (response.status >= 200 && response.status <= 299) {
       console.log('Successful response!');
+      setSuccess('Your post has been created!');
       return response.json();
     } else {
       console.log('Not successful response....');
@@ -50,15 +54,17 @@ function CreatePost({ user, concerts, setPosts, posts }) {
     })
       .then(checkError)
       .then((newSubmission) => {
-        const updatedConcert = concerts.map((concert) => {
-          console.log('concert: ', concert);
+        const updatedPosts = posts.map((thisPost) => {
+          if (parseInt(thisPost.id) === parseInt(newSubmission.id)) {
+            return newSubmission;
+          }
+          return thisPost;
         });
-        setPosts(updatedConcert);
-        navigate(-1); // change this to re-render the page and not just go back
+        setPosts(updatedPosts);
       });
   };
 
-  //! this is the version that updates posts
+  // ! this is the version that updates posts
   // .then((newSubmission) => {
   //   const updatedPosts = posts.map((thisPost) => {
   //     if (parseInt(thisPost.id) === parseInt(newSubmission.id)) {
@@ -85,6 +91,11 @@ function CreatePost({ user, concerts, setPosts, posts }) {
           {error !== '' && (
             <h1 class='text-2xl font-bold text-center text-indigo-600 sm:text-3xl'>
               {error}
+            </h1>
+          )}
+          {success !== '' && (
+            <h1 class='text-2xl font-bold text-center text-indigo-600 sm:text-3xl'>
+              {success}
             </h1>
           )}
           <form class='p-8 mt-2 mb-0 rounded-lg shadow-2xl space-y-4'>
@@ -115,6 +126,11 @@ function CreatePost({ user, concerts, setPosts, posts }) {
               type='submit'
               class='block w-full px-5 py-3 text-sm font-medium text-white bg-indigo-600 rounded-lg'>
               Submit
+            </button>
+            <button
+              class='block w-full px-5 py-3 text-sm font-medium text-white  bg-secondary rounded-lg'
+              onClick={() => navigate(`/artists/${artistID}`)}>
+              Go back
             </button>
           </form>
         </div>
