@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 
 function SignUp({ onLogin }) {
   //todo
-  //* stylize this page way better
+  //^ stylize this page way better
 
   const navigate = useNavigate();
   const [username, setUsername] = useState('');

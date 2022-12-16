@@ -47,14 +47,15 @@ function CreatePost({ user, concerts, setPosts, posts }) {
         concert_id: concertID,
         user_id: user.id,
       }),
-    }).then(checkError);
-    // .then((newSubmission) => {
-    //   const updatedConcert = concerts.map((concert) => {
-    //     console.log('concert: ', concert);
-    //   });
-    //   setPosts(updatedConcert);
-    //   navigate(-1); // change this to re-render the page and not just go back
-    // })
+    })
+      .then(checkError)
+      .then((newSubmission) => {
+        const updatedConcert = concerts.map((concert) => {
+          console.log('concert: ', concert);
+        });
+        setPosts(updatedConcert);
+        navigate(-1); // change this to re-render the page and not just go back
+      });
   };
 
   //! this is the version that updates posts

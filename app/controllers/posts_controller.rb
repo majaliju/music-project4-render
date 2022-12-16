@@ -1,9 +1,7 @@
 class PostsController < ApplicationController
-  ## rename the bottom two to align with updated names
-  rescue_from ActiveRecord::RecordNotFound, with: :render_not_found_response
-  rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity_response
-
-
+  # ## rename the bottom two to align with updated names
+  # rescue_from ActiveRecord::RecordNotFound, with: :render_not_found_response
+  # rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity_response
   
   def index
     posts = Post.all
@@ -15,21 +13,22 @@ class PostsController < ApplicationController
     render json: post, status: 200
   end
 
+
   def create
     post = Post.create!(new_post_params)
     render json: post, status: 200
   end
 
-  ## original write-up for create
-  # def create
-  #   post = Post.create!(new_post_params)
+  # original write-up for create
+  def create
+    post = Post.create!(new_post_params)
 
-  #   if post.valid? 
-  #     render json: post, status: 200
-  #   else
-  #     render json: { errors: post.errors }, status: :unprocessable_entity
-  #   end
-  # end
+    if post.valid? 
+      render json: post, status: 200
+    else
+      render json: { errors: post.errors }, status: :unprocessable_entity
+    end
+  end
 
       # def update
   #   ## needs to check session[:user_id] and match it to post.id
