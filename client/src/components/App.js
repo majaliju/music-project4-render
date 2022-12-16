@@ -33,6 +33,7 @@ function App() {
   //TODO
   //^ create an error message for user not found on the Login component if a wrong user renders
 
+  //& need to manage the useEffects here as well, trigger only essential ones
   //! dependencies are what need to be checked here
   useEffect(() => {
     fetch('/artists')
@@ -58,20 +59,11 @@ function App() {
       .then((info) => setGenres(info));
   }, []);
 
-  function getPosts() {
+  useEffect(() => {
     fetch('/posts')
       .then((r) => r.json())
       .then((info) => setPosts(info));
-  }
-
-  useEffect(() => {
-    getPosts();
-  }, [concerts]);
-
-  //* check this version with the 2 dependencies
-  // useEffect(() => {
-  //   getPosts();
-  // }, [artists, concerts]);
+  }, []);
 
   //^ our initial fetch to get user's ID for maintaining session state
   useEffect(() => {
