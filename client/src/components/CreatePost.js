@@ -1,15 +1,19 @@
 import { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 
-function CreatePost({ user, setPosts, posts }) {
+function CreatePost({ user, concerts, setPosts, posts }) {
   const navigate = useNavigate();
   const [body, setBody] = useState('');
-  const [ticketAmount, setTicketAmount] = useState('');
+  const [ticketAmount, setTicketAmount] = useState(0);
   const [error, setError] = useState('');
 
   const location = useLocation();
   let isSelling = location.state.isSelling;
   let concertID = location.state.concertID;
+
+  console.log('isSelling: ', isSelling);
+  console.log('concertID: ', concertID);
+  console.log('userID', user.id);
 
   //* updates for IndividualPost are being acted on artists state (thisArtist.post)
 
@@ -42,13 +46,28 @@ function CreatePost({ user, setPosts, posts }) {
         user_id: user.id,
       }),
     })
-      .then(checkError)
-      .then((item) => {
-        console.log(item);
-        navigate(-1);
-      });
-    // .catch((err) => setError(err));
+      // .then(checkError)
+      .then((newSubmission) => {
+        const updatedConcert = concerts.map((concert) => {});
+        setPosts(updatedPosts);
+        navigate(-1); // change this to re-render the page and not just go back
+      })
+      .catch(checkError);
   };
+
+  //! this is the version that updates posts
+  // .then((newSubmission) => {
+  //   const updatedPosts = posts.map((thisPost) => {
+  //     if (parseInt(thisPost.id) === parseInt(newSubmission.id)) {
+  //       return newSubmission;
+  //     }
+  //     return thisPost;
+  //   });
+  //   setPosts(updatedPosts);
+  //   navigate(-1);
+  // })
+
+  console.log("value of 'error' :", error);
 
   //^ line 47 here needs to be fixed and the post needs to be recorded to the right spot
 
