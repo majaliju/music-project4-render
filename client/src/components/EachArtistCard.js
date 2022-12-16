@@ -14,6 +14,9 @@ function EachArtistCard({ posts, artists, concerts }) {
     (artist) => parseInt(id) === parseInt(artist.id)
   );
 
+  //^ ESSENTIAL: handle the id, and thisArtist
+  //^
+
   return (
     <div>
       <div class='bg-base-900 py-6 sm:py-8 lg:py-'>
@@ -53,8 +56,11 @@ function EachArtistCard({ posts, artists, concerts }) {
                 ALL POSTS
               </h2>
               {thisArtist.posts.map((each) => (
-                <IndividualPost eachPost={each} posts={posts} />
+                <IndividualPost eachPost={each} />
               ))}
+              {/* {thisArtist.posts.map((each) =>
+                console.log("'each' within thisartist.posts.map(each)): ", each)
+              )} */}
             </div>
             <div>
               <div class='mx-auto max-w-screen-xl px-4 md:px-8'>

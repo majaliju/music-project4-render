@@ -5,11 +5,11 @@ import { Link, useNavigate } from 'react-router-dom';
 function IndividualPost({ eachPost, posts }) {
   let navigate = useNavigate();
 
-  const thisPost = posts.find(
-    (post) => parseInt(eachPost.id) === parseInt(post.id)
-  );
+  // const thisPost = posts.find(
+  //   (post) => parseInt(eachPost.id) === parseInt(post.id)
+  // );
 
-  console.log('thisPost within IndividualPost: ', thisPost);
+  console.log('eachPost within IndividualPost: ', eachPost);
 
   //^ ESSENTIAL: to create a div attribute that allows the user to edit this post ONLY if their user.username matches the post.user.username
 
@@ -19,27 +19,30 @@ function IndividualPost({ eachPost, posts }) {
 
   //& EXTRA BONUS: do the thing where you can click the link and open up the email app
 
+  // if done via thisArtist, then the username issues pops up
+  // if done via posts, then the username issue resolves but isn't via thisArtist (in one nested assocation)
+
   return (
     <div class='p-1 shadow-xl bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 rounded-2xl'>
       <div class='block p-6 bg-white sm:p-8 rounded-xl'>
         <div class='sm:pr-8'>
           <h2 class='text-xl font-bold text-center text-gray-900'>
-            {thisPost.for_sale === true ? (
+            {eachPost.for_sale === true ? (
               <h1 class='text-3xl justify-center'>
-                {thisPost.user.username} IS SELLING
-                {'' + thisPost.how_many_tickets + ''}
+                {eachPost.user.username} IS SELLING
+                {'' + eachPost.how_many_tickets + ''}
                 TICKETS
               </h1>
             ) : (
               <h1 class='text-3xl justify-center'>
-                {thisPost.user.username} IS LOOKING FOR
-                {'' + thisPost.how_many_tickets + ''} TICKETS
+                {eachPost.user.username} IS LOOKING FOR
+                {'' + eachPost.how_many_tickets + ''} TICKETS
               </h1>
             )}
-            <h2 class='text-2xl justify-center'>{thisPost.user.email}</h2>
+            <h2 class='text-2xl justify-center'>{eachPost.user.email}</h2>
           </h2>
 
-          <p class='mt-2 text-sm text-center  text-gray-500'>{thisPost.body}</p>
+          <p class='mt-2 text-sm text-center  text-gray-500'>{eachPost.body}</p>
         </div>
       </div>
     </div>

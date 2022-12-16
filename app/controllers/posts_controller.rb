@@ -14,10 +14,10 @@ class PostsController < ApplicationController
   end
 
 
-  def create
-    post = Post.create!(new_post_params)
-    render json: post, status: 200
-  end
+  # def create
+  #   post = Post.create!(new_post_params)
+  #   render json: post, status: 200
+  # end
 
   # original write-up for create
   def create

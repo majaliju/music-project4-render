@@ -41,7 +41,7 @@ function CreatePost({ user, concerts, setPosts, posts }) {
         'Access-Control-Allow-Origin': '*',
       },
       body: JSON.stringify({
-        body,
+        body: body,
         for_sale: isSelling,
         how_many_tickets: ticketAmount,
         concert_id: concertID,
@@ -71,6 +71,7 @@ function CreatePost({ user, concerts, setPosts, posts }) {
   // })
 
   console.log("value of 'error' :", error);
+  console.log('body within createNewPost: ', body);
 
   //^ line 47 here needs to be fixed and the post needs to be recorded to the right spot
 
