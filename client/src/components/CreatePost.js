@@ -19,8 +19,10 @@ function CreatePost({ user, concerts, setPosts, posts }) {
 
   function checkError(response) {
     if (response.status >= 200 && response.status <= 299) {
+      console.log('Successful response!');
       return response.json();
     } else {
+      console.log('Not successful response....');
       console.log('response: ', response);
       console.log('response.status: ', response.status);
       console.log('response.statusText: ', response.statusText);
@@ -45,14 +47,14 @@ function CreatePost({ user, concerts, setPosts, posts }) {
         concert_id: concertID,
         user_id: user.id,
       }),
-    })
-      // .then(checkError)
-      .then((newSubmission) => {
-        const updatedConcert = concerts.map((concert) => {});
-        setPosts(updatedPosts);
-        navigate(-1); // change this to re-render the page and not just go back
-      })
-      .catch(checkError);
+    }).then(checkError);
+    // .then((newSubmission) => {
+    //   const updatedConcert = concerts.map((concert) => {
+    //     console.log('concert: ', concert);
+    //   });
+    //   setPosts(updatedConcert);
+    //   navigate(-1); // change this to re-render the page and not just go back
+    // })
   };
 
   //! this is the version that updates posts
