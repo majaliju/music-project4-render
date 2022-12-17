@@ -122,6 +122,7 @@ function App() {
           element={
             <UsersPage
               user={user}
+              users={users}
               posts={posts}
               cookies={cookies}
               sessionInfo={sessionInfo}

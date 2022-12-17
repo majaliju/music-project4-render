@@ -1,10 +1,8 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import IndividualPost from './IndividualPost';
 
-function UsersPage({ user, sessionInfo, posts, loggedIn }) {
-  //* show post.user.username == user.username
-  //* the above will be the posts that will render on user's page with the relevant post info
-
+function UsersPage({ user, users, sessionInfo, loggedIn }) {
   return (
     <div>
       <div>
@@ -24,25 +22,22 @@ function UsersPage({ user, sessionInfo, posts, loggedIn }) {
                 <h2 class='mb-5 text-3xl font-bold'>
                   user's posts display below
                 </h2>
-                {posts
-                  .filter((post) => {
-                    if (post.user.username === user.username) {
-                      return post;
-                    }
-                  })
-                  .map((post) => (
-                    <div>
-                      <div
-                        key={post.id}
-                        class='card w-96 max-w-xs bg-neutral text-neutral-content shadow-xl'>
-                        <div class='card-body p-4 m-2 mx-0 items-center text-center'>
-                          <h1 class='card-title'>{post.user.username}</h1>
-                          <h2 class='card-body'>{post.body}</h2>
-                          <h3 class='card-body'>{post.id}</h3>
-                        </div>
+                {/* {user.posts.map((post) => (
+                  <div>
+                    <div
+                      key={post.id}
+                      class='card w-96 max-w-xs bg-neutral text-neutral-content shadow-xl'>
+                      <div class='card-body p-4 m-2 mx-0 items-center text-center'>
+                        <h1 class='card-title'>{user.username}</h1>
+                        <h2 class='card-body'>{post.body}</h2>
+                        <h3 class='card-body'>{post.id}</h3>
                       </div>
                     </div>
-                  ))}
+                  </div>
+                ))} */}
+                {user.posts.map((each) => (
+                  <IndividualPost eachPost={each} users={users} />
+                ))}
               </div>
             </div>
           </div>
