@@ -2,8 +2,11 @@ import { useState } from 'react';
 import EachUser from './EachUser';
 import { Link, useNavigate } from 'react-router-dom';
 
-function IndividualPost({ eachPost, users }) {
+function IndividualPost({ eachPost, users, user }) {
   let navigate = useNavigate();
+
+  // checks the user.id from the session against the user's ID here
+  const [userAllowed, setUserAllowed] = useState(false);
 
   const thisUser = users.find(
     (thisOne) => parseInt(thisOne.id) === parseInt(eachPost.user_id)
