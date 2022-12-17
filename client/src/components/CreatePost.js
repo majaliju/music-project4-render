@@ -5,7 +5,7 @@ function CreatePost({ user, concerts, setPosts, posts }) {
   const navigate = useNavigate();
   const [body, setBody] = useState('');
   const [ticketAmount, setTicketAmount] = useState(0);
-  const [error, setError] = useState({});
+  const [error, setError] = useState([]);
   const [success, setSuccess] = useState('');
   const [submitted, setSubmitted] = useState(false);
 
@@ -18,29 +18,29 @@ function CreatePost({ user, concerts, setPosts, posts }) {
 
   useEffect(() => {
     setSuccess('');
-    setError('');
+    setError([]);
     setSubmitted(false);
     setBody('');
     setTicketAmount(0);
   }, []);
 
-  function checkError(response) {
-    if (response.status >= 200 && response.status <= 299) {
-      console.log('Successful response!');
-      setError('');
-      setSuccess('Your post has been created!');
-      setSubmitted(true);
-      return response.json();
-    } else {
-      console.log('Not successful response....');
-      console.log('response: ', response);
-      console.log('response.status: ', response.status);
-      console.log('response.statusText: ', response.statusText);
-      setError(response.statusText);
-      throw response;
-    }
-  }
-  //^ handle the error message display here as well
+  // function checkError(response) {
+  //   if (response.status >= 200 && response.status <= 299) {
+  //     console.log('Successful response!');
+  //     setError([]);
+  //     setSuccess('Your post has been created!');
+  //     setSubmitted(true);
+  //     return response.json();
+  //   } else {
+  //     console.log('Not successful response....');
+  //     console.log('response: ', response);
+  //     console.log('response.status: ', response.status);
+  //     console.log('response.statusText: ', response.statusText);
+  //     setError(response.statusText);
+  //     throw response;
+  //   }
+  // }
+  // //^ handle the error message display here as well
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -63,7 +63,9 @@ function CreatePost({ user, concerts, setPosts, posts }) {
       } else {
         response.json().then((e) => {
           console.log('e. errors: ', e.errors);
-          setError(e.errors);
+          const entries = Object.entries(e.errors).flat(2);
+          console.log('entries: ', entries);
+          setError(entries);
         });
       }
     });
@@ -76,25 +78,27 @@ function CreatePost({ user, concerts, setPosts, posts }) {
     <div>
       <div class='px-4 py-16 mx-auto max-w-screen-xl sm:px-6 lg:px-8'>
         <div class='max-w-lg mx-auto'>
-          {/* {error !== '' ? (
-            <div class='alert alert-warning shadow-lg'>
-              <div>
-                <svg
-                  xmlns='http://www.w3.org/2000/svg'
-                  class='stroke-current flex-shrink-0 h-6 w-6'
-                  fill='none'
-                  viewBox='0 0 24 24'>
-                  <path
-                    stroke-linecap='round'
-                    stroke-linejoin='round'
-                    stroke-width='2'
-                    d='M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z'
-                  />
-                </svg>
-                <span>{error}</span>
-              </div>
-            </div>
-          ) : null} */}
+          {error !== []
+            ? error.map((each) => {
+                <div class='alert alert-warning shadow-lg'>
+                  <div>
+                    <svg
+                      xmlns='http://www.w3.org/2000/svg'
+                      class='stroke-current flex-shrink-0 h-6 w-6'
+                      fill='none'
+                      viewBox='0 0 24 24'>
+                      <path
+                        stroke-linecap='round'
+                        stroke-linejoin='round'
+                        stroke-width='2'
+                        d='M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z'
+                      />
+                    </svg>
+                    <span>{each}</span>
+                  </div>
+                </div>;
+              })
+            : null}
           {success !== '' ? (
             <div class='alert alert-success shadow-lg'>
               <div>
