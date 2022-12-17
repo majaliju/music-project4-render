@@ -52,7 +52,7 @@ function App() {
     fetch('/concerts')
       .then((r) => r.json())
       .then((info) => setConcerts(info));
-  }, [posts]);
+  }, []);
 
   useEffect(() => {
     fetch('/genres')
@@ -73,6 +73,8 @@ function App() {
   }, []);
 
   //^ our initial fetch to get user's ID for maintaining session state
+
+  //! show error message for bad login
   useEffect(() => {
     fetch('/me').then((response) => {
       if (response.ok) {

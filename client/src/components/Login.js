@@ -18,6 +18,7 @@ function Login({ onLogin }) {
       console.log('response: ', response);
       console.log('response.status: ', response.status);
       console.log('response.statusText: ', response.statusText);
+      setError(response.status);
       throw response;
     }
   }
@@ -38,9 +39,8 @@ function Login({ onLogin }) {
       .then(checkError)
       .then((item) => {
         onLogin(item);
-      })
-      .catch((err) => console.log(err));
-    navigate(-1);
+        navigate(-1);
+      });
   }
 
   return (
