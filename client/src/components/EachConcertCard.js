@@ -5,7 +5,7 @@ import IndividualPost from './IndividualPost';
 import Loading from './Loading';
 import CreatePost from './CreatePost';
 
-function EachConcertCard({ concert, posts }) {
+function EachConcertCard({ concert }) {
   // TODO
   //^ center the card in the middle of the page
   //* potentially add click links on artist's name and venue name
