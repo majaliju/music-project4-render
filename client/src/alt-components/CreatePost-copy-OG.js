@@ -5,7 +5,7 @@ function CreatePost({ user, concerts, setPosts, posts }) {
   const navigate = useNavigate();
   const [body, setBody] = useState('');
   const [ticketAmount, setTicketAmount] = useState(0);
-  const [error, setError] = useState({});
+  const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
   const [submitted, setSubmitted] = useState(false);
 
@@ -57,26 +57,37 @@ function CreatePost({ user, concerts, setPosts, posts }) {
         concert_id: concertID,
         user_id: user.id,
       }),
-    }).then((response) => {
-      if (response.ok) {
-        response.json().then(console.log);
-      } else {
-        response.json().then((e) => {
-          console.log('e. errors: ', e.errors);
-          setError(e.errors);
+    })
+      .then(checkError)
+      .then((newSubmission) => {
+        const updatedPosts = posts.map((thisPost) => {
+          if (parseInt(thisPost.id) === parseInt(newSubmission.id)) {
+            return newSubmission;
+          }
+          return thisPost;
         });
-      }
-    });
+        setPosts(updatedPosts);
+      });
   };
 
-  console.log('error: ', error);
+  // ! this is the version that updates posts
+  // .then((newSubmission) => {
+  //   const updatedPosts = posts.map((thisPost) => {
+  //     if (parseInt(thisPost.id) === parseInt(newSubmission.id)) {
+  //       return newSubmission;
+  //     }
+  //     return thisPost;
+  //   });
+  //   setPosts(updatedPosts);
+  //   navigate(-1);
+  // })
 
   //! disable submit button after successful submission
   return (
     <div>
       <div class='px-4 py-16 mx-auto max-w-screen-xl sm:px-6 lg:px-8'>
         <div class='max-w-lg mx-auto'>
-          {/* {error !== '' ? (
+          {error !== '' ? (
             <div class='alert alert-warning shadow-lg'>
               <div>
                 <svg
@@ -94,7 +105,7 @@ function CreatePost({ user, concerts, setPosts, posts }) {
                 <span>{error}</span>
               </div>
             </div>
-          ) : null} */}
+          ) : null}
           {success !== '' ? (
             <div class='alert alert-success shadow-lg'>
               <div>
