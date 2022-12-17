@@ -24,27 +24,27 @@ function IndividualPost({ eachPost, users }) {
 
   return (
     <div class='p-1 shadow-xl bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 rounded-2xl'>
-      <div class='block p-6 bg-white sm:p-8 rounded-xl'>
+      <div class='block p-6 bg-black sm:p-8 rounded-xl'>
         <div class='sm:pr-8'>
-          <h2 class='text-xl font-bold text-center text-gray-900'>
-            {eachPost.for_sale === true ? (
-              <h1 class='text-3xl justify-center'>
-                {thisUser.username} IS SELLING
-                {'' + eachPost.tickets + ''}
-                TICKETS
-              </h1>
-            ) : (
-              <h1 class='text-3xl justify-center'>
-                {thisUser.username} IS LOOKING FOR
-                {'' + eachPost.tickets + ''} TICKETS
-              </h1>
-            )}
-            <h2 class='text-2xl justify-center'>{thisUser.email}</h2>
+          <h2 class='text-xl font-bold text-left text-primary'>
+            <h2 class='text-3xl justify-center'>by: {thisUser.username}</h2>
+          </h2>
+          <h2 class='text-xl font-light text-left text-secondary'>
+            <h2 class='text-1xl justify-center'>
+              {eachPost.for_sale === true ? (
+                <div>is selling</div>
+              ) : (
+                <div>is looking to buy</div>
+              )}
+            </h2>
           </h2>
 
-          <p class='mt-2 text-sm text-center  text-gray-500'>
+          <h3 class='mt-2 text-lg text-right text-purple-500'>
             {eachPost.comment_body}
-          </p>
+          </h3>
+          <h4 class='mt-2 text-md text-right justify-center text-amber-300'>
+            email: {thisUser.email}
+          </h4>
         </div>
       </div>
     </div>

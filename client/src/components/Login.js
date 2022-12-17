@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
 import { useEffect, useState } from 'react';
 import { NavLink, Link, useNavigate } from 'react-router-dom';
 
@@ -39,7 +38,7 @@ function Login({ onLogin }) {
       .then(checkError)
       .then((item) => {
         onLogin(item);
-        navigate(-1);
+        navigate('/');
       });
   }
 

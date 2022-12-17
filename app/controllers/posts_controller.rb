@@ -18,6 +18,24 @@ class PostsController < ApplicationController
     render json: post, status: 201
   end
 
+
+ def update
+  post = Post.find_by(id: params[:id])
+  user = User.find_by(id: session[:user_id])
+  if user == post.user_id 
+    post.update(
+      comment_body: params[:comment_body]
+      tickets: params[:tickets]
+    )
+    render json: post, status: 200
+    end 
+  end
+        
+    ## needs to check session[:user_id] and match it to post.id
+    ## if they match, user can update post
+    ## if they dont', render an unauthorized error
+
+
   # # original write-up for create
   # def create
   #   post = Post.create!(new_post_params)
@@ -28,22 +46,6 @@ class PostsController < ApplicationController
   #     render json: { errors: post.errors }, status: :unprocessable_entity
   #   end
   # end
-
-      def update
-        post = Post.find_by(id: params[:id])
-        user = User.find_by(id: session[:user_id])
-        if user == post.user_id 
-          post.update(
-            comment_body: params[:comment_body]
-            tickets: params[:tickets]
-          )
-          render json: post, status: 200
-        end
-        
-    ## needs to check session[:user_id] and match it to post.id
-    ## if they match, user can update post
-    ## if they dont', render an unauthorized error
-  end
 
   # def destroy
   #   ## needs to check session[:user_id] and match it to post.id
