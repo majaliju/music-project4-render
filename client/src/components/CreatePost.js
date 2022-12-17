@@ -59,7 +59,10 @@ function CreatePost({ user, concerts, setPosts, posts }) {
       }),
     }).then((response) => {
       if (response.status >= 200 && response.status <= 299) {
-        console.log('response ', response.json());
+        console.log('response ', response);
+        response.json().then((info) => {
+          console.log('info within successful :', info);
+        });
         setError([]);
         setSuccess('Your post has been created!');
         setSubmitted(true);
@@ -73,6 +76,38 @@ function CreatePost({ user, concerts, setPosts, posts }) {
       }
     });
   };
+
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   fetch('/new_post', {
+  //     method: 'POST',
+  //     headers: {
+  //       'Content-Type': 'application/json',
+  //       'Access-Control-Allow-Origin': '*',
+  //     },
+  //     body: JSON.stringify({
+  //       body: body,
+  //       for_sale: isSelling,
+  //       how_many_tickets: ticketAmount,
+  //       concert_id: concertID,
+  //       user_id: user.id,
+  //     }),
+  //   }).then((response) => {
+  //     if (response.status >= 200 && response.status <= 299) {
+  //       console.log('response ', response.json());
+  //       setError([]);
+  //       setSuccess('Your post has been created!');
+  //       setSubmitted(true);
+  //     } else {
+  //       response.json().then((e) => {
+  //         console.log('e. errors: ', e.errors);
+  //         const entries = Object.entries(e.errors).flat(2);
+  //         console.log('entries: ', entries);
+  //         setError(entries);
+  //       });
+  //     }
+  //   });
+  // };
 
   console.log('error: ', error);
 
