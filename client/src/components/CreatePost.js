@@ -33,9 +33,9 @@ function CreatePost({ user, concerts, setPosts, posts }) {
         'Access-Control-Allow-Origin': '*',
       },
       body: JSON.stringify({
-        body: body,
+        comment_body: body,
         for_sale: isSelling,
-        how_many_tickets: ticketAmount,
+        tickets: ticketAmount,
         concert_id: concertID,
         user_id: user.id,
       }),

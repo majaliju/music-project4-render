@@ -39,9 +39,9 @@ ActiveRecord::Schema.define(version: 2022_12_02_013856) do
   end
 
   create_table "posts", force: :cascade do |t|
-    t.string "body"
+    t.string "comment_body"
     t.boolean "for_sale"
-    t.integer "how_many_tickets"
+    t.integer "tickets"
     t.integer "concert_id"
     t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false

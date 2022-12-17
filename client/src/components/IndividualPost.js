@@ -30,19 +30,21 @@ function IndividualPost({ eachPost, users }) {
             {eachPost.for_sale === true ? (
               <h1 class='text-3xl justify-center'>
                 {thisUser.username} IS SELLING
-                {'' + eachPost.how_many_tickets + ''}
+                {'' + eachPost.tickets + ''}
                 TICKETS
               </h1>
             ) : (
               <h1 class='text-3xl justify-center'>
                 {thisUser.username} IS LOOKING FOR
-                {'' + eachPost.how_many_tickets + ''} TICKETS
+                {'' + eachPost.tickets + ''} TICKETS
               </h1>
             )}
             <h2 class='text-2xl justify-center'>{thisUser.email}</h2>
           </h2>
 
-          <p class='mt-2 text-sm text-center  text-gray-500'>{eachPost.body}</p>
+          <p class='mt-2 text-sm text-center  text-gray-500'>
+            {eachPost.comment_body}
+          </p>
         </div>
       </div>
     </div>
