@@ -142,7 +142,7 @@ function CreatePost({ user, concerts, setPosts, posts }) {
                 disabled
                 type='submit'
                 class='block w-full px-5 py-3 text-sm font-medium text-white bg-black rounded-lg'>
-                Submitted
+                SUBMITTED!
               </button>
             )}
 

@@ -15,7 +15,7 @@ class PostsController < ApplicationController
 
   def create
     post = Post.create!(new_post_params)
-    render json: post, status: 200
+    render json: post, status: 201
   end
 
   # # original write-up for create
@@ -29,11 +29,21 @@ class PostsController < ApplicationController
   #   end
   # end
 
-      # def update
-  #   ## needs to check session[:user_id] and match it to post.id
-  #   ## if they match, user can update post
-  #   ## if they dont', render an unauthorized error
-  # end
+      def update
+        post = Post.find_by(id: params[:id])
+        user = User.find_by(id: session[:user_id])
+        if user == post.user_id 
+          post.update(
+            comment_body: params[:comment_body]
+            tickets: params[:tickets]
+          )
+          render json: post, status: 200
+        end
+        
+    ## needs to check session[:user_id] and match it to post.id
+    ## if they match, user can update post
+    ## if they dont', render an unauthorized error
+  end
 
   # def destroy
   #   ## needs to check session[:user_id] and match it to post.id
