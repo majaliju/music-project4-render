@@ -50,52 +50,12 @@ function CreatePost({ user, concerts, setPosts, posts }) {
         setSubmitted(true);
       } else {
         response.json().then((e) => {
-          console.log('Not successful response....');
-          console.log('response: ', response);
-          console.log('response.status: ', response.status);
-          console.log('response.statusText: ', response.statusText);
           console.log('e. errors: ', e.errors);
-          const entries = Object.entries(e.errors).flat(2);
-          console.log('entries: ', entries);
-          setError(entries);
+          setError(e.errors);
         });
       }
     });
   };
-
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   fetch('/new_post', {
-  //     method: 'POST',
-  //     headers: {
-  //       'Content-Type': 'application/json',
-  //       'Access-Control-Allow-Origin': '*',
-  //     },
-  //     body: JSON.stringify({
-  //       body: body,
-  //       for_sale: isSelling,
-  //       how_many_tickets: ticketAmount,
-  //       concert_id: concertID,
-  //       user_id: user.id,
-  //     }),
-  //   }).then((response) => {
-  //     if (response.status >= 200 && response.status <= 299) {
-  //       console.log('response ', response.json());
-  //       setError([]);
-  //       setSuccess('Your post has been created!');
-  //       setSubmitted(true);
-  //     } else {
-  //       response.json().then((e) => {
-  //         console.log('e. errors: ', e.errors);
-  //         const entries = Object.entries(e.errors).flat(2);
-  //         console.log('entries: ', entries);
-  //         setError(entries);
-  //       });
-  //     }
-  //   });
-  // };
-
-  console.log('error: ', error);
 
   //! disable submit button after successful submission
   return (
@@ -121,16 +81,33 @@ function CreatePost({ user, concerts, setPosts, posts }) {
               </div>
             </div>
           ) : null}
-          {/* {error.map((each) => {
-            console.log('each : ', each);
+          {error !== []
+            ? error.map((eachError) => {
+                <div class='alert alert-warning shadow-lg'>
+                  <div>
+                    <svg
+                      xmlns='http://www.w3.org/2000/svg'
+                      class='stroke-current flex-shrink-0 h-6 w-6'
+                      fill='none'
+                      viewBox='0 0 24 24'>
+                      <path
+                        stroke-linecap='round'
+                        stroke-linejoin='round'
+                        stroke-width='2'
+                        d='M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z'
+                      />
+                    </svg>
+                    <span>{eachError}</span>
+                    {console.log('eachError: ', eachError)}
+                  </div>
+                </div>;
+              })
+            : null}
 
-            <h1 class='text-2xl font-bold text-center text-indigo-600 sm:text-3xl'>
-              {each}
-            </h1>;
-          })} */}
           <h1 class='text-2xl font-bold text-center text-white sm:text-3xl'>
             CREATE A POST!
           </h1>
+
           <form class='p-8 mt-2 mb-0 rounded-lg shadow-2xl space-y-4'>
             <div>
               <input
@@ -176,6 +153,13 @@ function CreatePost({ user, concerts, setPosts, posts }) {
             </button>
           </form>
         </div>
+        {/* {error.map((each) => {
+              console.log('each : ', each);
+              <h1 class='text-2xl font-bold text-center text-indigo-600 sm:text-3xl'>
+                {each}
+              </h1>;
+            })} */}
+
         {/* {error !== []
           ? error.map((each) => {
               <div class='alert alert-warning shadow-lg'>

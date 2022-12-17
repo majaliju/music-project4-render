@@ -72,9 +72,10 @@ function App() {
       .then((info) => setPosts(info));
   }, []);
 
-  //^ our initial fetch to get user's ID for maintaining session state
+  //? INITIAL FETCH BELOW FOR REGISTERING THE USER
 
   //! show error message for bad login
+  //^ create an error for user error messages
   useEffect(() => {
     fetch('/me').then((response) => {
       if (response.ok) {
