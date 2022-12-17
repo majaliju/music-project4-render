@@ -48,12 +48,12 @@ class PostsController < ApplicationController
     params.permit(:body, :for_sale, :how_many_tickets, :email, :concert_id, :user_id)
   end
 
-  def render_unprocessable_entity_response(invalid)
-    render json: { errors: invalid.record.errors }, status: :unprocessable_entity
-  end
+  # def render_unprocessable_entity_response(invalid)
+  #   render json: { errors: invalid.record.errors }, status: :unprocessable_entity
+  # end
 
-  def render_not_found_response(invalid)
-    render json: { error: invalid.message }, status: :not_found
-  end
+  # def render_not_found_response(invalid)
+  #   render json: { error: invalid.message }, status: :not_found
+  # end
 
 end
