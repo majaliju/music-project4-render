@@ -24,24 +24,6 @@ function CreatePost({ user, concerts, setPosts, posts }) {
     setTicketAmount(0);
   }, []);
 
-  // function checkError(response) {
-  //   if (response.status >= 200 && response.status <= 299) {
-  //     console.log('Successful response!');
-  //     setError([]);
-  //     setSuccess('Your post has been created!');
-  //     setSubmitted(true);
-  //     return response.json();
-  //   } else {
-  //     console.log('Not successful response....');
-  //     console.log('response: ', response);
-  //     console.log('response.status: ', response.status);
-  //     console.log('response.statusText: ', response.statusText);
-  //     setError(response.statusText);
-  //     throw response;
-  //   }
-  // }
-  // //^ handle the error message display here as well
-
   const handleSubmit = (e) => {
     e.preventDefault();
     fetch('/new_post', {
@@ -68,6 +50,10 @@ function CreatePost({ user, concerts, setPosts, posts }) {
         setSubmitted(true);
       } else {
         response.json().then((e) => {
+          console.log('Not successful response....');
+          console.log('response: ', response);
+          console.log('response.status: ', response.status);
+          console.log('response.statusText: ', response.statusText);
           console.log('e. errors: ', e.errors);
           const entries = Object.entries(e.errors).flat(2);
           console.log('entries: ', entries);
@@ -135,15 +121,15 @@ function CreatePost({ user, concerts, setPosts, posts }) {
               </div>
             </div>
           ) : null}
-          {error.map((each) => {
+          {/* {error.map((each) => {
             console.log('each : ', each);
 
             <h1 class='text-2xl font-bold text-center text-indigo-600 sm:text-3xl'>
               {each}
             </h1>;
-          })}
-          <h1 class='text-2xl font-bold text-center text-indigo-600 sm:text-3xl'>
-            TICKET POST
+          })} */}
+          <h1 class='text-2xl font-bold text-center text-white sm:text-3xl'>
+            CREATE A POST!
           </h1>
           <form class='p-8 mt-2 mb-0 rounded-lg shadow-2xl space-y-4'>
             <div>
@@ -172,7 +158,7 @@ function CreatePost({ user, concerts, setPosts, posts }) {
                 onClick={handleSubmit}
                 type='submit'
                 class='block w-full px-5 py-3 text-sm font-medium text-white bg-indigo-600 rounded-lg'>
-                Submit
+                SUBMIT
               </button>
             ) : (
               <button
@@ -186,7 +172,7 @@ function CreatePost({ user, concerts, setPosts, posts }) {
             <button
               class='block w-full px-5 py-3 text-sm font-medium text-white  bg-secondary rounded-lg'
               onClick={() => navigate(`/`)}>
-              Go back to your posts
+              VIEW YOUR POSTS
             </button>
           </form>
         </div>
