@@ -21,8 +21,6 @@ function IndividualPost({ eachPost, users, user }) {
   );
 
   const handleDelete = (e) => {
-    console.log(eachPost);
-    e.preventDefault();
     fetch(`/delete_post/${eachPost.id}`, {
       method: 'DELETE',
     })

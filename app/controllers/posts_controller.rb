@@ -33,8 +33,7 @@ class PostsController < ApplicationController
 
   def destroy
     post = Post.find_by(id: params[:id])
-    user = User.find_by(id: session[:user_id])
-    if user.id === post.user_id 
+    if session[:user_id] === params[:user_id]
       post.destroy
       head :no_content
     end
