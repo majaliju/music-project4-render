@@ -30,15 +30,19 @@ function EditPost({ user, posts, setPosts }) {
       }),
     }).then((response) => {
       if (response.status >= 200 && response.status <= 299) {
-        response.json().then((info) => {
-          console.log('info within successful :', info);
-          // filter through posts
-          // return the specific one that was updated
-          // return the other ones
+        response.json().then((theNewPost) => {
+          const updatedPosts = posts.filter((thisPost) => {
+            if (thisPost.id === theNewPost.id) {
+              return theNewPost;
+            } else {
+              return thisPost;
+            }
+          });
+          setPosts(updatedPosts);
+          setError([]);
+          setSuccess('Your post has been successfully updated!');
+          setSubmitted(true);
         });
-        setError([]);
-        setSuccess('Your post has been successfully updated!');
-        setSubmitted(true);
       } else {
         response.json().then((e) => {
           console.log('e : ', e);
