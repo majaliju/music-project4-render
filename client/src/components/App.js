@@ -30,7 +30,7 @@ function App() {
   const [artists, setArtists] = useState([]);
   const [concerts, setConcerts] = useState([]);
   const [posts, setPosts] = useState([]);
-  const [users, setUsers] = useState('');
+  const [users, setUsers] = useState([]);
 
   //TODO
   //^ create an error message for user not found on the Login component if a wrong user renders
