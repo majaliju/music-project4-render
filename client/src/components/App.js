@@ -35,6 +35,7 @@ function App() {
   //TODO
   //^ create an error message for user not found on the Login component if a wrong user renders
 
+  //? this whole area can be cleaned up but needs to be viewed at the end of the project, not just yet
   //& need to manage the useEffects here as well, trigger only essential ones
   //! dependencies are what need to be checked here
   useEffect(() => {
