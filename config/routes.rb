@@ -18,6 +18,8 @@ Rails.application.routes.draw do
 
   ##~ FOR THE POSTS CREATION/EDITS/DELETION
   post '/new_post', to: "posts#create"
+  patch '/update_post', to: "posts#update"
+  delete '/delete_post', to: "posts#destroy"
 
   ##~ THE LOGIN/LOGOUT ROUTES
   #& to create a new user outright

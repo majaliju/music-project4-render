@@ -22,7 +22,7 @@ class PostsController < ApplicationController
  def update
   post = Post.find_by(id: params[:id])
   user = User.find_by(id: session[:user_id])
-  if user === post.user_id 
+  if user.id === post.user_id 
     post.update(
       comment_body: params[:comment_body],
       tickets: params[:tickets]
@@ -47,11 +47,15 @@ class PostsController < ApplicationController
   #   end
   # end
 
-  # def destroy
-  #   ## needs to check session[:user_id] and match it to post.id
-  #   ## if they match, user can update post
-  #   ## if they dont', render an unauthorized error
-  # end
+  def destroy
+    post = Post.find_by(id: params[:id])
+    user = User.find_by(id: session[:user_id])
+    if user.id === post.user_id 
+      post.destroy
+      render json: post, status: 200
+    end
+
+  end
 
   private
 
@@ -66,5 +70,8 @@ class PostsController < ApplicationController
   def render_not_found_response(invalid)
     render json: { error: invalid.message }, status: :not_found
   end
+
+  # create a render_unauthorized_response
+
 
 end
