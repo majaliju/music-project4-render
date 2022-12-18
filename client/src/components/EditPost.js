@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useNavigate, useLocation, Link } from 'react-router-dom';
 
-function EditPost({ currentBody, currentTickets }) {
+function EditPost({ user, currentBody, currentTickets }) {
   const navigate = useNavigate();
   const [body, setBody] = useState(currentBody);
   const [ticketAmount, setTicketAmount] = useState(currentTickets);
@@ -9,9 +9,39 @@ function EditPost({ currentBody, currentTickets }) {
   const [success, setSuccess] = useState('');
   const [submitted, setSubmitted] = useState(false);
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    fetch('/new_post', {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*',
+      },
+      body: JSON.stringify({
+        comment_body: body,
+        tickets: ticketAmount,
+        user_id: user.id,
+      }),
+    }).then((response) => {
+      if (response.status >= 200 && response.status <= 299) {
+        console.log('response ', response);
+        response.json().then((info) => {
+          console.log('info within successful :', info);
+        });
+        setError([]);
+        setSuccess('Your post has been created!');
+        setSubmitted(true);
+      } else {
+        response.json().then((e) => {
+          console.log('e. errors: ', e.errors);
+          setError(e.errors);
+        });
+      }
+    });
+  };
+
   return (
     <div>
-      {' '}
       <div class='px-4 py-16 mx-auto max-w-screen-xl sm:px-6 lg:px-8'>
         <div class='max-w-lg mx-auto'>
           {success !== '' ? (

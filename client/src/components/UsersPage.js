@@ -36,7 +36,7 @@ function UsersPage({ user, users, sessionInfo, loggedIn }) {
                   </div>
                 ))} */}
                 {user.posts.map((each) => (
-                  <IndividualPost eachPost={each} users={users} />
+                  <IndividualPost eachPost={each} users={users} user={user} />
                 ))}
               </div>
             </div>

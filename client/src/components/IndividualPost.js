@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import EachUser from './EachUser';
 import { Link, useNavigate } from 'react-router-dom';
 
@@ -8,11 +8,25 @@ function IndividualPost({ eachPost, users, user }) {
   // checks the user.id from the session against the user's ID here
   const [userAllowed, setUserAllowed] = useState(false);
 
+  useEffect(() => {
+    if (user.id === eachPost.user_id) {
+      setUserAllowed(true);
+    } else {
+      setUserAllowed(false);
+    }
+  }, []);
+
   const thisUser = users.find(
     (thisOne) => parseInt(thisOne.id) === parseInt(eachPost.user_id)
   );
 
+  const handleDelete = (e) => {
+    console.log(eachPost);
+  };
+
   console.log('eachPost within IndividualPost: ', eachPost);
+  console.log('user within IndividualPost :', user);
+  console.log('userAllowed: ', userAllowed);
 
   //^ ESSENTIAL: to create a div attribute that allows the user to edit this post ONLY if their user.username matches the post.user.username
 
@@ -49,6 +63,21 @@ function IndividualPost({ eachPost, users, user }) {
             email: {thisUser.email}
           </h4>
         </div>
+        <Link
+          to='/editPost'
+          state={{
+            currentBody: eachPost.comment_body,
+            currentTickets: eachPost.tickets,
+          }}
+          class='btn btn-primary btn-outline w-full'>
+          EDIT YOUR POST
+        </Link>
+        <button
+          onClick={handleDelete}
+          type='submit'
+          class='btn btn-secondary btn-outline w-full'>
+          DELETE YOUR POST
+        </button>
       </div>
     </div>
   );
