@@ -51,11 +51,12 @@ function Header({ user, setUser, onLogin, onLogout, loggedIn }) {
                   genres
                 </NavLink>
               </li>
-              <li>
+              {/* concerts tab is redundant */}
+              {/* <li>
                 <NavLink to='/concerts' class='uppercase font-bold'>
                   concerts
                 </NavLink>
-              </li>
+              </li> */}
               <div>
                 {user === null && (
                   <li>
@@ -115,13 +116,14 @@ function Header({ user, setUser, onLogin, onLogout, loggedIn }) {
                   <h3 class='uppercase font-bold'>genres</h3>
                 </NavLink>
               </li>
-              <li>
+              {/* concerts tab is redundant */}
+              {/* <li>
                 <NavLink
                   to='/concerts'
                   class='btn btn-primary uppercase font-bold'>
                   <h3 class='uppercase font-bold'>concerts</h3>
                 </NavLink>
-              </li>
+              </li> */}
             </ul>
           </div>
         </div>
