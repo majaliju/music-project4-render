@@ -19,42 +19,25 @@ class PostsController < ApplicationController
   end
 
 
- def update
-  post = Post.find_by(id: params[:id])
-  user = User.find_by(id: session[:user_id])
-  if user.id === post.user_id 
-    post.update(
-      comment_body: params[:comment_body],
-      tickets: params[:tickets]
-    )
-    render json: post, status: 200
+  def update
+    post = Post.find_by(id: params[:id])
+    if session[:user_id] === params[:user_id]
+      post.update(
+        comment_body: params[:comment_body],
+        tickets: params[:tickets]
+      )
+      render json: post, status: 200
     end 
   end
         
-    ## needs to check session[:user_id] and match it to post.id
-    ## if they match, user can update post
-    ## if they dont', render an unauthorized error
-
-
-  # # original write-up for create
-  # def create
-  #   post = Post.create!(new_post_params)
-
-  #   if post.valid? 
-  #     render json: post, status: 200
-  #   else
-  #     render json: { errors: post.errors }, status: :unprocessable_entity
-  #   end
-  # end
 
   def destroy
     post = Post.find_by(id: params[:id])
     user = User.find_by(id: session[:user_id])
     if user.id === post.user_id 
       post.destroy
-      render json: post, status: 200
+      head :no_content
     end
-
   end
 
   private
@@ -75,3 +58,28 @@ class PostsController < ApplicationController
 
 
 end
+
+
+  # # original write-up for create
+  # def create
+  #   post = Post.create!(new_post_params)
+
+  #   if post.valid? 
+  #     render json: post, status: 200
+  #   else
+  #     render json: { errors: post.errors }, status: :unprocessable_entity
+  #   end
+  # end
+
+
+  # def update
+  #   post = Post.find_by(id: params[:id])
+  #   user = User.find_by(id: session[:user_id])
+  #   if session[:user_id] === params[:user_id]
+  #     post.update(
+  #       comment_body: params[:comment_body],
+  #       tickets: params[:tickets]
+  #     )
+  #     render json: post, status: 200
+  #     end 
+  #   end

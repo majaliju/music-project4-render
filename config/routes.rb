@@ -9,17 +9,18 @@ Rails.application.routes.draw do
   get '/genres', to: "genres#index"
   get '/venues', to: "venues#index"
   get '/concerts', to: "concerts#index"
-  get '/posts', to: "posts#index"
-  get '/users', to: "users#index"
+
+
 
   # #& get info about the artist's upcoming shows
   # get '/upcoming_shows', to: "artists#upcoming_shows"
 
 
-  ##~ FOR THE POSTS CREATION/EDITS/DELETION
+  ##~ FOR THE POSTS GET/CREATION/EDITS/DELETION
+  get '/posts', to: "posts#index"
   post '/new_post', to: "posts#create"
-  patch '/update_post', to: "posts#update"
-  delete '/delete_post', to: "posts#destroy"
+  patch '/update_post/:id', to: "posts#update"
+  delete '/delete_post/:id', to: "posts#destroy"
 
   ##~ THE LOGIN/LOGOUT ROUTES
   #& to create a new user outright

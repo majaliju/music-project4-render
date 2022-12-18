@@ -22,6 +22,12 @@ function IndividualPost({ eachPost, users, user }) {
 
   const handleDelete = (e) => {
     console.log(eachPost);
+    e.preventDefault();
+    fetch(`/delete_post/${eachPost.id}`, {
+      method: 'DELETE',
+    })
+      .then((response) => response.json())
+      .then((info) => console.log('info within handleDelete: ', info));
   };
 
   console.log('eachPost within IndividualPost: ', eachPost);
@@ -66,6 +72,7 @@ function IndividualPost({ eachPost, users, user }) {
         <Link
           to='/editPost'
           state={{
+            postID: eachPost.id,
             currentBody: eachPost.comment_body,
             currentTickets: eachPost.tickets,
           }}

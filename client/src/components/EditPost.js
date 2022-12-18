@@ -1,8 +1,14 @@
 import { useState, useEffect } from 'react';
 import { useNavigate, useLocation, Link } from 'react-router-dom';
 
-function EditPost({ user, currentBody, currentTickets }) {
+function EditPost({ user }) {
   const navigate = useNavigate();
+
+  const location = useLocation();
+  let currentBody = location.state.currentBody;
+  let currentTickets = location.state.currentTickets;
+  let postID = location.state.postID;
+
   const [body, setBody] = useState(currentBody);
   const [ticketAmount, setTicketAmount] = useState(currentTickets);
   const [error, setError] = useState([]);
@@ -11,7 +17,7 @@ function EditPost({ user, currentBody, currentTickets }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    fetch('/new_post', {
+    fetch(`/update_post/${postID}`, {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',
@@ -33,6 +39,7 @@ function EditPost({ user, currentBody, currentTickets }) {
         setSubmitted(true);
       } else {
         response.json().then((e) => {
+          console.log('e : ', e);
           console.log('e. errors: ', e.errors);
           setError(e.errors);
         });
