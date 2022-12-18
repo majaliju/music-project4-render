@@ -28,12 +28,6 @@ function IndividualPost({ eachPost, users, user }) {
       .then((info) => console.log('info within handleDelete: ', info));
   };
 
-  console.log('eachPost within IndividualPost: ', eachPost);
-  console.log('user within IndividualPost :', user);
-  console.log('userAllowed: ', userAllowed);
-
-  //^ ESSENTIAL: to create a div attribute that allows the user to edit this post ONLY if their user.username matches the post.user.username
-
   //^ POTENTIAL ESSENTIAL: include the user and link to EachUser page, where each users Posts display
 
   //^ CONFIGURE THE STYLING ON THE USERNAME

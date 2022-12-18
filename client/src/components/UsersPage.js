@@ -19,22 +19,6 @@ function UsersPage({ user, users, sessionInfo, loggedIn }) {
                   Welcome back, {user.username}!
                 </h1>
                 <p class='mb-5'>Your sessionID is {sessionInfo.session_id}</p>
-                <h2 class='mb-5 text-3xl font-bold'>
-                  user's posts display below
-                </h2>
-                {/* {user.posts.map((post) => (
-                  <div>
-                    <div
-                      key={post.id}
-                      class='card w-96 max-w-xs bg-neutral text-neutral-content shadow-xl'>
-                      <div class='card-body p-4 m-2 mx-0 items-center text-center'>
-                        <h1 class='card-title'>{user.username}</h1>
-                        <h2 class='card-body'>{post.body}</h2>
-                        <h3 class='card-body'>{post.id}</h3>
-                      </div>
-                    </div>
-                  </div>
-                ))} */}
                 {user.posts.map((each) => (
                   <IndividualPost eachPost={each} users={users} user={user} />
                 ))}
@@ -54,7 +38,7 @@ function UsersPage({ user, users, sessionInfo, loggedIn }) {
             <div class='hero-content text-center text-neutral-content'>
               <div class='max-w-md'>
                 <h1 class='mb-5 text-5xl font-bold'>
-                  Welcome to ticketblaster
+                  Welcome to ticketblaster!
                 </h1>
                 <p class='mb-5'>
                   The #1 place to find tickets or sell tickets directly to other
