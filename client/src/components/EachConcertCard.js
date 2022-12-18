@@ -47,7 +47,7 @@ function EachConcertCard({ concert }) {
                         artistID: concert.artist_id,
                       }}
                       class='btn btn-secondary w-full'>
-                      I have tickets to sell
+                      I'M SELLING!
                     </Link>
                     <Link
                       to='/createNewPost'
@@ -57,7 +57,7 @@ function EachConcertCard({ concert }) {
                         artistID: concert.artist_id,
                       }}
                       class='btn btn-secondary w-full'>
-                      I'm Looking For Tickets
+                      I'M BUYING!
                     </Link>
                   </div>
                 </div>

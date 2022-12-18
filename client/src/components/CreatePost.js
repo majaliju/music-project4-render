@@ -15,14 +15,14 @@ function CreatePost({ user, concerts, setPosts, posts }) {
 
   //* updates for IndividualPost are being acted on artists state (thisArtist.post)
 
-  //* resetting our states when a new page renders
-  useEffect(() => {
-    setSuccess('');
-    setError([]);
-    setSubmitted(false);
-    setBody('');
-    setTicketAmount(0);
-  }, []);
+  // //* resetting our states when a new page renders
+  // useEffect(() => {
+  //   setSuccess('');
+  //   setError([]);
+  //   setSubmitted(false);
+  //   setBody('');
+  //   setTicketAmount(0);
+  // }, []);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -41,9 +41,8 @@ function CreatePost({ user, concerts, setPosts, posts }) {
       }),
     }).then((response) => {
       if (response.status >= 200 && response.status <= 299) {
-        console.log('response ', response);
         response.json().then((info) => {
-          console.log('info within successful :', info);
+          setPosts([...posts, info]);
         });
         setError([]);
         setSuccess('Your post has been created!');
@@ -56,6 +55,9 @@ function CreatePost({ user, concerts, setPosts, posts }) {
       }
     });
   };
+
+  //! ERRORS ARE NOT RENDERING PROPERLY TO THE PAGE
+  //~ ERRORS ARE WORKING AND RESPONDING PROPERLY THOUGH; THE POST IS BEING CREATED SUCCESSFULLY
 
   return (
     <div>
@@ -80,28 +82,27 @@ function CreatePost({ user, concerts, setPosts, posts }) {
               </div>
             </div>
           ) : null}
-          {error !== []
-            ? error.map((eachError) => {
-                <div class='alert alert-warning shadow-lg'>
-                  <div>
-                    <svg
-                      xmlns='http://www.w3.org/2000/svg'
-                      class='stroke-current flex-shrink-0 h-6 w-6'
-                      fill='none'
-                      viewBox='0 0 24 24'>
-                      <path
-                        stroke-linecap='round'
-                        stroke-linejoin='round'
-                        stroke-width='2'
-                        d='M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z'
-                      />
-                    </svg>
-                    <span>{eachError}</span>
-                    {console.log('eachError: ', eachError)}
-                  </div>
-                </div>;
-              })
-            : null}
+          {/* //! errors aren't rendering; not sure why */}
+          {error.map((eachError) => {
+            <div class='alert alert-warning shadow-lg'>
+              <div>
+                <svg
+                  xmlns='http://www.w3.org/2000/svg'
+                  class='stroke-current flex-shrink-0 h-6 w-6'
+                  fill='none'
+                  viewBox='0 0 24 24'>
+                  <path
+                    stroke-linecap='round'
+                    stroke-linejoin='round'
+                    stroke-width='2'
+                    d='M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z'
+                  />
+                </svg>
+                <span>{eachError}</span>
+                {console.log('eachError: ', eachError)}
+              </div>
+            </div>;
+          })}
 
           <h1 class='text-2xl font-bold text-center text-white sm:text-3xl'>
             CREATE A POST!
