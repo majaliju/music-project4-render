@@ -1,6 +1,5 @@
-function EachUser() {
-  //^ display each post from the User
-  //^ with a check for if your own ID matches this user's ID then allow you to edit it with a button
+function EachUser({}) {
+  //* basically runs through users and displays all IndividualPosts from this given user
   return (
     <div>
       <h1> for each user, display their posts here</h1>
