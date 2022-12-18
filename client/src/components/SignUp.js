@@ -16,9 +16,7 @@ function SignUp({ onLogin }) {
     if (response.status >= 200 && response.status <= 299) {
       return response.json();
     } else {
-      console.log('response: ', response);
-      console.log('response.status: ', response.status);
-      console.log('response.statusText: ', response.statusText);
+      //~ render the proper error from the backend to the error here
       throw response;
     }
   }
@@ -42,8 +40,7 @@ function SignUp({ onLogin }) {
       .then((item) => {
         onLogin(item);
         navigate('/');
-      })
-      .catch((err) => console.log('from the catch: ', err));
+      });
   }
 
   return (

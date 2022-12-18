@@ -14,9 +14,7 @@ function Login({ onLogin }) {
     if (response.status >= 200 && response.status <= 299) {
       return response.json();
     } else {
-      console.log('response: ', response);
-      console.log('response.status: ', response.status);
-      console.log('response.statusText: ', response.statusText);
+      //~ below is where I gotta set a better error from the login (configure backend for it)
       setError(response.status);
       throw response;
     }
@@ -99,7 +97,7 @@ function Login({ onLogin }) {
                 <label>
                   <button
                     type='submit'
-                    class='btn btn-ghostfont-bold form-control text-secondary-content uppercase'>
+                    class='btn btn-ghost font-bold form-control text-secondary-content uppercase'>
                     <Link to='/signup'>First time here? Sign up!</Link>
                   </button>
                 </label>
