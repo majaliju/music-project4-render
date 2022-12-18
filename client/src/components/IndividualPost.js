@@ -67,22 +67,26 @@ function IndividualPost({ eachPost, users, user }) {
             email: {thisUser.email}
           </h4>
         </div>
-        <Link
-          to='/editPost'
-          state={{
-            postID: eachPost.id,
-            currentBody: eachPost.comment_body,
-            currentTickets: eachPost.tickets,
-          }}
-          class='btn btn-primary btn-outline w-full'>
-          EDIT YOUR POST
-        </Link>
-        <button
-          onClick={handleDelete}
-          type='submit'
-          class='btn btn-secondary btn-outline w-full'>
-          DELETE YOUR POST
-        </button>
+        {userAllowed !== false && (
+          <div>
+            <Link
+              to='/editPost'
+              state={{
+                postID: eachPost.id,
+                currentBody: eachPost.comment_body,
+                currentTickets: eachPost.tickets,
+              }}
+              class='btn btn-primary btn-outline w-full'>
+              EDIT YOUR POST
+            </Link>
+            <button
+              onClick={handleDelete}
+              type='submit'
+              class='btn btn-secondary btn-outline w-full'>
+              DELETE YOUR POST
+            </button>
+          </div>
+        )}
       </div>
     </div>
   );
