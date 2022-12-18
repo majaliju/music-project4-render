@@ -15,6 +15,7 @@ import EachConcertCard from './EachConcertCard';
 import EachVenueCard from './EachVenueCard';
 import EachGenreCard from './EachGenreCard';
 import CreatePost from './CreatePost';
+import EditPost from './EditPost';
 import EachUser from './EachUser';
 
 function App() {
@@ -245,6 +246,17 @@ function App() {
           path='/createNewPost'
           element={
             <CreatePost
+              user={user}
+              concerts={concerts}
+              posts={posts}
+              setPosts={setPosts}
+            />
+          }
+        />
+        <Route
+          path='/editPost'
+          element={
+            <EditPost
               user={user}
               concerts={concerts}
               posts={posts}

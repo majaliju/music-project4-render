@@ -22,9 +22,9 @@ class PostsController < ApplicationController
  def update
   post = Post.find_by(id: params[:id])
   user = User.find_by(id: session[:user_id])
-  if user == post.user_id 
+  if user === post.user_id 
     post.update(
-      comment_body: params[:comment_body]
+      comment_body: params[:comment_body],
       tickets: params[:tickets]
     )
     render json: post, status: 200
