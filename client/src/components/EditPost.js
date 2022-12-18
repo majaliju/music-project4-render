@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useNavigate, useLocation, Link } from 'react-router-dom';
 
-function EditPost({ user }) {
+function EditPost({ user, posts, setPosts }) {
   const navigate = useNavigate();
 
   const location = useLocation();
@@ -30,12 +30,14 @@ function EditPost({ user }) {
       }),
     }).then((response) => {
       if (response.status >= 200 && response.status <= 299) {
-        console.log('response ', response);
         response.json().then((info) => {
           console.log('info within successful :', info);
+          // filter through posts
+          // return the specific one that was updated
+          // return the other ones
         });
         setError([]);
-        setSuccess('Your post has been created!');
+        setSuccess('Your post has been successfully updated!');
         setSubmitted(true);
       } else {
         response.json().then((e) => {

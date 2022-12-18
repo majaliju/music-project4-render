@@ -22,7 +22,7 @@ class PostsController < ApplicationController
   def update
     post = Post.find_by(id: params[:id])
     if session[:user_id] === params[:user_id]
-      post.update(
+      post.update!(
         comment_body: params[:comment_body],
         tickets: params[:tickets]
       )
