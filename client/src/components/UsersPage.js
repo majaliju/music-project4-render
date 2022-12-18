@@ -2,7 +2,15 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import IndividualPost from './IndividualPost';
 
-function UsersPage({ user, users, sessionInfo, loggedIn }) {
+function UsersPage({
+  user,
+  users,
+  sessionInfo,
+  loggedIn,
+  posts,
+  setPosts,
+  handleDelete,
+}) {
   return (
     <div>
       <div>
@@ -20,7 +28,14 @@ function UsersPage({ user, users, sessionInfo, loggedIn }) {
                 </h1>
                 <p class='mb-5'>Your sessionID is {sessionInfo.session_id}</p>
                 {user.posts.map((each) => (
-                  <IndividualPost eachPost={each} users={users} user={user} />
+                  <IndividualPost
+                    handleDelete={handleDelete}
+                    eachPost={each}
+                    posts={posts}
+                    setPosts={setPosts}
+                    users={users}
+                    user={user}
+                  />
                 ))}
               </div>
             </div>

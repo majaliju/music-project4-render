@@ -2,7 +2,14 @@ import { useState, useEffect } from 'react';
 import EachUser from './EachUser';
 import { Link, useNavigate } from 'react-router-dom';
 
-function IndividualPost({ eachPost, users, user }) {
+function IndividualPost({
+  eachPost,
+  posts,
+  setPosts,
+  users,
+  user,
+  handleDelete,
+}) {
   let navigate = useNavigate();
 
   // checks the user.id from the session against the user's ID here
@@ -20,18 +27,8 @@ function IndividualPost({ eachPost, users, user }) {
     (thisOne) => parseInt(thisOne.id) === parseInt(eachPost.user_id)
   );
 
-  const handleDelete = (e) => {
-    fetch(`/delete_post/${eachPost.id}`, {
-      method: 'DELETE',
-    })
-      .then((response) => response.json())
-      .then((info) => console.log('info within handleDelete: ', info));
-  };
-
   //^ POTENTIAL ESSENTIAL: include the user and link to EachUser page, where each users Posts display
-
   //^ CONFIGURE THE STYLING ON THE USERNAME
-
   //& EXTRA BONUS: do the thing where you can click the link and open up the email app
 
   // if done via thisArtist, then the username issues pops up

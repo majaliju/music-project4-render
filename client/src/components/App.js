@@ -110,6 +110,26 @@ function App() {
     getSession();
   }, []);
 
+  // below line is just a quick workaround so I can keep state up here within the app
+  let eachPost = {};
+  const handleDelete = (e) => {
+    fetch(`/delete_post/${eachPost.id}`, {
+      method: 'DELETE',
+    })
+      .then((response) => response.json())
+      .then((deletedPost) => {
+        console.log('deletedPost :', deletedPost);
+        const updatedPosts = posts.filter((thisPost) => {
+          if (thisPost.id === deletedPost.id) {
+            return deletedPost;
+          } else {
+            return thisPost;
+          }
+        });
+        setPosts(updatedPosts);
+      });
+  };
+
   return (
     <div>
       <Header
@@ -127,6 +147,8 @@ function App() {
               user={user}
               users={users}
               posts={posts}
+              setPosts={setPosts}
+              handleDelete={handleDelete}
               cookies={cookies}
               sessionInfo={sessionInfo}
               loggedIn={loggedIn}
