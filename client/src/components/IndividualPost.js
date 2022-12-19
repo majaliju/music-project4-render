@@ -45,21 +45,18 @@ function IndividualPost({
       <div class='block p-6 bg-black sm:p-8 rounded-xl'>
         <div class='sm:pr-8'>
           <h2 class='text-xl font-bold text-left text-primary'>
-            {/* {thisUser !== undefined && (
-              <h2 class='text-3xl justify-center'>by: {thisUser.username}</h2>
-            )} */}
-            <h2 class='text-3xl justify-center'>
+            <h3 class='text-3xl justify-center'>
               by: {thisPost.user.username}
-            </h2>
+            </h3>
           </h2>
           <h2 class='text-xl font-light text-left text-secondary'>
-            <h2 class='text-1xl justify-center'>
+            <h3 class='text-1xl justify-center'>
               {thisPost.for_sale === true ? (
                 <div>is selling</div>
               ) : (
                 <div>is looking to buy</div>
               )}
-            </h2>
+            </h3>
           </h2>
 
           <h3 class='mt-2 text-lg text-right text-purple-500'>

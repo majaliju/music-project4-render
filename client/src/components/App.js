@@ -72,7 +72,7 @@ function App() {
     fetch('/posts')
       .then((r) => r.json())
       .then((info) => setPosts(info));
-  }, []);
+  });
 
   //? INITIAL FETCH BELOW FOR REGISTERING THE USER
 
