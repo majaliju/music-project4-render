@@ -143,7 +143,7 @@ function EditPost({ user, posts, setPosts }) {
 
             <button
               class='block w-full px-5 py-3 text-sm font-medium text-white  bg-secondary rounded-lg'
-              onClick={() => navigate(-1)}>
+              onClick={() => navigate('/')}>
               VIEW YOUR POSTS
             </button>
           </form>

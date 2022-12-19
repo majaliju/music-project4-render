@@ -11,6 +11,17 @@ function UsersPage({
   setPosts,
   handleDelete,
 }) {
+  function handleDelete(eachPost) {
+    fetch(`/delete_post/${eachPost.id}`, {
+      method: 'DELETE',
+    });
+    console.log('deletedPost :', eachPost);
+    const remainingPosts = posts.filter(
+      (thisPost) => parseInt(thisPost.id) !== parseInt(eachPost.id)
+    );
+    setPosts(remainingPosts);
+  }
+
   return (
     <div>
       <div>
@@ -27,10 +38,10 @@ function UsersPage({
                   Welcome back, {user.username}!
                 </h1>
                 <p class='mb-5'>Your sessionID is {sessionInfo.session_id}</p>
-                {user.posts.map((each) => (
+                {user.posts.map((eachPost) => (
                   <IndividualPost
                     handleDelete={handleDelete}
-                    eachPost={each}
+                    eachPost={eachPost}
                     posts={posts}
                     setPosts={setPosts}
                     users={users}

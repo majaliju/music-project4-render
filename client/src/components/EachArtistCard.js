@@ -7,7 +7,15 @@ import EachConcertCard from './EachConcertCard';
 
 //* GOTTA ADJUST STYLING HERE TO FORM EVERYTHING IN THE CENTER CLEANLY
 
-function EachArtistCard({ users, posts, artists, concerts, user }) {
+function EachArtistCard({
+  users,
+  posts,
+  setPosts,
+  artists,
+  concerts,
+  user,
+  handleDelete,
+}) {
   let { id } = useParams();
 
   const thisArtist = artists.find(
@@ -55,8 +63,15 @@ function EachArtistCard({ users, posts, artists, concerts, user }) {
               <h2 class='my-10 text-center text-5xl font-thin uppercase text-primary md:mb-6 lg:text-6xl'>
                 ALL POSTS
               </h2>
-              {thisArtist.posts.map((each) => (
-                <IndividualPost eachPost={each} users={users} user={user} />
+              {thisArtist.posts.map((eachPost) => (
+                <IndividualPost
+                  eachPost={eachPost}
+                  posts={posts}
+                  setPosts={setPosts}
+                  users={users}
+                  user={user}
+                  handleDelete={handleDelete}
+                />
               ))}
             </div>
             <div>
