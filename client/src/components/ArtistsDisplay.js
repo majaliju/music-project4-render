@@ -5,8 +5,6 @@ import Loading from './Loading';
 function ArtistsDisplay({ artists, genres, user, searchTerm, setSearchTerm }) {
   let navigate = useNavigate();
 
-  console.log('artists within ArtistsDisplay: ', artists);
-
   useEffect(() => {
     setSearchTerm('');
   }, [artists]);
