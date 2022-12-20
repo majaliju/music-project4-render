@@ -17,15 +17,10 @@ function EachArtistCard({
   user,
   handleDelete,
 }) {
-  let { id } = useParams();
   const location = useLocation();
   let artist = location.state.artist;
 
   console.log('artist via Link: ', artist);
-
-  const thisArtist = artists.find(
-    (artist) => parseInt(id) === parseInt(artist.id)
-  );
 
   //^ ESSENTIAL: handle the id, and thisArtist
   //^
@@ -33,11 +28,11 @@ function EachArtistCard({
   return (
     <div>
       <div class='bg-base-900 py-6 sm:py-8 lg:py-'>
-        {thisArtist !== undefined ? (
-          <div key={thisArtist.id} class='mx-auto max-w-screen-xl px-4 md:px-8'>
+        {artist !== undefined ? (
+          <div key={artist.id} class='mx-auto max-w-screen-xl px-4 md:px-8'>
             <div class='mb-10 md:mb-16'>
               <h1 class='mb-4 text-center text-6xl font-thin uppercase text-primary md:mb-6 lg:text-7xl'>
-                {thisArtist.name}
+                {artist.name}
               </h1>
             </div>
 
@@ -46,13 +41,13 @@ function EachArtistCard({
                 <div class='avatar'>
                   <div class='w-30 rounded'>
                     <img
-                      src={thisArtist.image}
-                      alt='a small avatar of the music thisArtist'
+                      src={artist.image}
+                      alt='a small avatar of the music artist'
                     />
                   </div>
                 </div>
                 <div class='card-body items-center text-center'>
-                  <h2 class='card-title'>{thisArtist.name}</h2>
+                  <h2 class='card-title'>{artist.name}</h2>
 
                   <div class='card-actions justify-end'>
                     <Link
@@ -68,7 +63,7 @@ function EachArtistCard({
               <h2 class='my-10 text-center text-5xl font-thin uppercase text-primary md:mb-6 lg:text-6xl'>
                 ALL POSTS
               </h2>
-              {thisArtist.posts.map((eachPost) => (
+              {artist.posts.map((eachPost) => (
                 <IndividualPost
                   eachPost={eachPost}
                   posts={posts}
@@ -90,7 +85,7 @@ function EachArtistCard({
                 <div class='grid gap-8 mx-6 sm:grid-cols-2 sm:gap-12 lg:grid-cols-3 '>
                   {concerts
                     .filter((concert) => {
-                      if (concert.artist.id === thisArtist.id) {
+                      if (concert.artist.id === artist.id) {
                         return concert;
                       }
                     })

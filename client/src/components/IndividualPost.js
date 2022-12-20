@@ -12,8 +12,6 @@ function IndividualPost({
   user,
   handleDelete,
 }) {
-  let navigate = useNavigate();
-
   const [userAllowed, setUserAllowed] = useState(false);
   const [postDeleted, setPostDeleted] = useState(false);
 
@@ -25,12 +23,11 @@ function IndividualPost({
     }
   }, []);
 
-  // const thisUser = users.find(
-  //   (thisOne) => parseInt(user.id) === parseInt(eachPost.user_id)
-  // );
+  const thisUser = users.find(
+    (thisOne) => parseInt(thisOne.id) === parseInt(eachPost.user_id)
+  );
 
-  const thisPost = posts.find((post) => post.id === eachPost.id);
-  console.log('thisPost within IndividualPost: ', thisPost);
+  console.log('thisUser: ', thisUser);
 
   //! use posts here to sort thru all the posts instead of linking
 
@@ -46,13 +43,13 @@ function IndividualPost({
       <div class='block p-6 bg-black sm:p-8 rounded-xl'>
         <div class='sm:pr-8'>
           <h2 class='text-xl font-bold text-left text-primary'>
-            <h3 class='text-3xl justify-center'>
-              by: {thisPost.user.username}
-            </h3>
+            {thisUser !== undefined && (
+              <h3 class='text-3xl justify-center'>by: {thisUser.username}</h3>
+            )}
           </h2>
           <h2 class='text-xl font-light text-left text-secondary'>
             <h3 class='text-1xl justify-center'>
-              {thisPost.for_sale === true ? (
+              {eachPost.for_sale === true ? (
                 <div>is selling</div>
               ) : (
                 <div>is looking to buy</div>
@@ -61,27 +58,29 @@ function IndividualPost({
           </h2>
 
           <h3 class='mt-2 text-lg text-right text-purple-500'>
-            {thisPost.comment_body}
+            {eachPost.comment_body}
           </h3>
-          <h4 class='mt-2 text-md text-right justify-center text-amber-300'>
-            email: {thisPost.user.email}
-          </h4>
+          {thisUser !== undefined && (
+            <h4 class='mt-2 text-md text-right justify-center text-amber-300'>
+              email: {thisUser.email}
+            </h4>
+          )}
         </div>
         {userAllowed !== false && (
           <div>
             <Link
               to='/editPost'
               state={{
-                postID: thisPost.id,
-                currentBody: thisPost.comment_body,
-                currentTickets: thisPost.tickets,
+                postID: eachPost.id,
+                currentBody: eachPost.comment_body,
+                currentTickets: eachPost.tickets,
               }}
               class='btn btn-primary btn-outline w-full'>
               EDIT YOUR POST
             </Link>
             <button
               onClick={() => {
-                handleDelete(thisPost);
+                handleDelete(eachPost);
               }}
               type='submit'
               class='btn btn-secondary btn-outline w-full'>
