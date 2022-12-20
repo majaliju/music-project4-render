@@ -193,7 +193,7 @@ v53 = Venue.create({name: "House of Blues", location: "Boston, MA, USA", image: 
 #* the concerts in the database w/ their posts
 
 #~ Adele
-c1 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a1.id, venue_id: v1.id})
+c1 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a1.id, venue: 'Hollywood Bowl', location: 'Los Angeles, CA, USA', image: "/venues-images/hollywood-bowl.jpg"})
   p1 = Post.create({comment_body: "2 tickets, $100 total OBO -- CHEAPEST YOU'LL EVER FIND FOR ADELE!!", for_sale: true, tickets: 2, user_id: u1.id, concert_id: c1.id})
 
 #~ John Legend
@@ -271,255 +271,255 @@ p18 = Post.create({comment_body: "Hi I'm selling 4 tickets, altogether. No seper
 c19 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a19.id, venue_id: v19.id})
 p20 = Post.create({comment_body: "Selling 6 tickets. Contact me via email ONLY. TROLLS WILL BE BLOCKED", for_sale: true, tickets: 6, user_id: u23.id, concert_id: c19.id})
 
-#~ Arctic Monkeys
-c20 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a20.id, venue_id: v20.id})
-# p21 = Post.create({{}})
+# #~ Arctic Monkeys
+# c20 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a20.id, venue_id: v20.id})
+# # p21 = Post.create({{}})
 
-#~ Red Hot Chili Peppers
-c21 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a21.id, venue_id: v21.id})
-# p22 = Post.create({})
+# #~ Red Hot Chili Peppers
+# c21 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a21.id, venue_id: v21.id})
+# # p22 = Post.create({})
 
-#~ Sturgil Simpson
-c22 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a22.id, venue_id: v22.id})
-# p23 = Post.create({})
-# p24 = Post.create({})
+# #~ Sturgil Simpson
+# c22 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a22.id, venue_id: v22.id})
+# # p23 = Post.create({})
+# # p24 = Post.create({})
 
-#~ Diplo
-c23 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a23.id, venue_id: v23.id})
-# p25 = Post.create({})
+# #~ Diplo
+# c23 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a23.id, venue_id: v23.id})
+# # p25 = Post.create({})
 
-#~ My Chemical Romance
-c24 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a24.id, venue_id: v24.id})
-# p26 = Post.create({})
+# #~ My Chemical Romance
+# c24 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a24.id, venue_id: v24.id})
+# # p26 = Post.create({})
 
-#~ Tiesto
-c25 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a25.id, venue_id: v25.id})
-# p27 = Post.create({})
+# #~ Tiesto
+# c25 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a25.id, venue_id: v25.id})
+# # p27 = Post.create({})
 
-#~ Jason Aldean
-c26 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a26.id, venue_id: v26.id})
-# p28 = Post.create({})
+# #~ Jason Aldean
+# c26 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a26.id, venue_id: v26.id})
+# # p28 = Post.create({})
 
-#~ Armin Van Buuren
-c27 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a27.id, venue_id: v27.id})
-# p29 = Post.create({})
+# #~ Armin Van Buuren
+# c27 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a27.id, venue_id: v27.id})
+# # p29 = Post.create({})
 
-#~ Calvin Harris
-c28 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a28.id, venue_id: v28.id})
-# p30 = Post.create({})
-# p31 = Post.create({})
-# p32 = Post.create({})
+# #~ Calvin Harris
+# c28 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a28.id, venue_id: v28.id})
+# # p30 = Post.create({})
+# # p31 = Post.create({})
+# # p32 = Post.create({})
 
-#~ Luke Combs
-c29 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a29.id, venue_id: v29.id})
-# p33  = Post.create({})
+# #~ Luke Combs
+# c29 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a29.id, venue_id: v29.id})
+# # p33  = Post.create({})
 
-#~ Lilly Palmer
-c30 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a30.id, venue_id: v30.id})
-# p34 = Post.create({})
+# #~ Lilly Palmer
+# c30 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a30.id, venue_id: v30.id})
+# # p34 = Post.create({})
 
-#~ Greta Van Fleet
-c31 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a31.id, venue_id: v31.id})
-# p35 = Post.create({})
+# #~ Greta Van Fleet
+# c31 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a31.id, venue_id: v31.id})
+# # p35 = Post.create({})
 
-#~ Cody Johnson
-c32 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a32.id, venue_id: v32.id})
-# p36 = Post.create({})
+# #~ Cody Johnson
+# c32 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a32.id, venue_id: v32.id})
+# # p36 = Post.create({})
 
-#~ Kodak Black
-c33 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a33.id, venue_id: v33.id})
-# p37 = Post.create({})
+# #~ Kodak Black
+# c33 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a33.id, venue_id: v33.id})
+# # p37 = Post.create({})
 
-#~ Kali Uchis
-c34 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a34.id, venue_id: v34.id})
-# p38 = Post.create({})
+# #~ Kali Uchis
+# c34 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a34.id, venue_id: v34.id})
+# # p38 = Post.create({})
 
-#~ Maneskin
-c35 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a35.id, venue_id: v35.id})
-# p39 = Post.create({})
+# #~ Maneskin
+# c35 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a35.id, venue_id: v35.id})
+# # p39 = Post.create({})
 
-#~ Romeo Santos
-c36 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a36.id, venue_id: v36.id})
-# p40 = Post.create({})
-# p41 = Post.create({})
+# #~ Romeo Santos
+# c36 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a36.id, venue_id: v36.id})
+# # p40 = Post.create({})
+# # p41 = Post.create({})
 
-#~ Tchami
-c37 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a37.id, venue_id: v37.id})
-# p42 = Post.create({})
+# #~ Tchami
+# c37 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a37.id, venue_id: v37.id})
+# # p42 = Post.create({})
 
-#~ J Balvin
-c38 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a38.id, venue_id: v38.id})
-# p43 = Post.create({})
+# #~ J Balvin
+# c38 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a38.id, venue_id: v38.id})
+# # p43 = Post.create({})
 
-#~ Malaa
-c39 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a39.id, venue_id: v39.id})
-# p44 = Post.create({})
+# #~ Malaa
+# c39 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a39.id, venue_id: v39.id})
+# # p44 = Post.create({})
 
-#~ Fall Out Boy
-c40 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a40.id, venue_id: v40.id}) 
-# p45  = Post.create({})
+# #~ Fall Out Boy
+# c40 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a40.id, venue_id: v40.id}) 
+# # p45  = Post.create({})
 
-#~ Daddy Yankee
-c41 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a41.id, venue_id: v41.id})
-# p46 = Post.create({})
+# #~ Daddy Yankee
+# c41 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a41.id, venue_id: v41.id})
+# # p46 = Post.create({})
 
 
-#~ Black Coffee
-c42 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a42.id, venue_id: v42.id})
+# #~ Black Coffee
+# c42 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a42.id, venue_id: v42.id})
+# # p = Post.create({})
+
+# #~ Maluma
+# c43 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a43.id, venue_id: v43.id})
+# # p = Post.create({})
+
+# #~ Weezer
+# c44 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a44.id, venue_id: v44.id})
 # p = Post.create({})
 
-#~ Maluma
-c43 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a43.id, venue_id: v43.id})
+# #~ Karol G
+# c45 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a45.id, venue_id: v45.id})
+# # p = Post.create({})
+
+# #~ Madlib
+# c46 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a46.id, venue_id: v46.id})
+# # p = Post.create({})
+
+# #~ H.E.R.
+# c47 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a47.id, venue_id: v47.id})
+# # p = Post.create({})
+
+# #~ Khalid
+# c48 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a48.id, venue_id: v48.id})
+# # p = Post.create({})
+
+# #~ Jack White
+# c49 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a49.id, venue_id: v49.id})
 # p = Post.create({})
 
-#~ Weezer
-c44 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a44.id, venue_id: v44.id})
-p = Post.create({})
+# #~ Kurt Rosenwinkel
+# c50 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a50.id, venue_id: v50.id})
+# # p = Post.create({})
 
-#~ Karol G
-c45 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a45.id, venue_id: v45.id})
-# p = Post.create({})
+# #~ Jason Moran
+# c = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a50.id, venue_id: v50.id})
+# # p = Post.create({})
 
-#~ Madlib
-c46 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a46.id, venue_id: v46.id})
-# p = Post.create({})
+# #~ Kaytranada
+# c = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a50.id, venue_id: v50.id})
+# # p = Post.create({})
 
-#~ H.E.R.
-c47 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a47.id, venue_id: v47.id})
-# p = Post.create({})
+# #~ Jhene Aiko
+# c = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a50.id, venue_id: v50.id})
+# # p = Post.create({})
 
-#~ Khalid
-c48 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a48.id, venue_id: v48.id})
-# p = Post.create({})
-
-#~ Jack White
-c49 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a49.id, venue_id: v49.id})
-p = Post.create({})
-
-#~ Kurt Rosenwinkel
-c50 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a50.id, venue_id: v50.id})
-# p = Post.create({})
-
-#~ Jason Moran
-c = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a50.id, venue_id: v50.id})
-# p = Post.create({})
-
-#~ Kaytranada
-c = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a50.id, venue_id: v50.id})
-# p = Post.create({})
-
-#~ Jhene Aiko
-c = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a50.id, venue_id: v50.id})
-# p = Post.create({})
-
-#~ Rick Ross
-c = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a50.id, venue_id: v50.id})
-# p = Post.create({})
+# #~ Rick Ross
+# c = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a50.id, venue_id: v50.id})
+# # p = Post.create({})
 
 
-#~ Meek Mill
-c = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a50.id, venue_id: v50.id})
+# #~ Meek Mill
+# c = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a50.id, venue_id: v50.id})
 
-#~ Kygo
-c = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a50.id, venue_id: v50.id})
+# #~ Kygo
+# c = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a50.id, venue_id: v50.id})
 
-#~ JAY-Z
-c = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a50.id, venue_id: v50.id})
-
-
-#~ Ozuna
-c = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a50.id, venue_id: v50.id})
+# #~ JAY-Z
+# c = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a50.id, venue_id: v50.id})
 
 
-#~ Metallica
-c = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a50.id, venue_id: v50.id})
+# #~ Ozuna
+# c = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a50.id, venue_id: v50.id})
 
 
-#~ Alesso
-c = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a50.id, venue_id: v50.id})
+# #~ Metallica
+# c = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a50.id, venue_id: v50.id})
 
 
-#~ Kehlani
-c = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a50.id, venue_id: v50.id})
+# #~ Alesso
+# c = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a50.id, venue_id: v50.id})
 
 
-#~ Kanye West
-c = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a50.id, venue_id: v50.id})
+# #~ Kehlani
+# c = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a50.id, venue_id: v50.id})
 
 
-#~ Afrojack
-c = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a50.id, venue_id: v50.id})
+# #~ Kanye West
+# c = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a50.id, venue_id: v50.id})
 
 
-#~ Vijay Iyer
-c = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a50.id, venue_id: v50.id})
+# #~ Afrojack
+# c = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a50.id, venue_id: v50.id})
 
 
-#~ Ari Lennox
-c = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a50.id, venue_id: v50.id})
+# #~ Vijay Iyer
+# c = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a50.id, venue_id: v50.id})
 
 
-#~ Amelie Lens
-c = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a50.id, venue_id: v50.id})
+# #~ Ari Lennox
+# c = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a50.id, venue_id: v50.id})
 
 
-#~ Ambrose Akinmusire
-c = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a50.id, venue_id: v50.id})
+# #~ Amelie Lens
+# c = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a50.id, venue_id: v50.id})
 
 
-#~ Michael Buble
-c = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a50.id, venue_id: v50.id})
+# #~ Ambrose Akinmusire
+# c = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a50.id, venue_id: v50.id})
 
 
-#~ Ava Max
-c = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a50.id, venue_id: v50.id})
-
-#~ Beyonce
-c = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a50.id, venue_id: v50.id})
-
-#~ Peggy Gou
-c = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a50.id, venue_id: v50.id})
-
-#~ Lady Gaga
-c = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a50.id, venue_id: v50.id})
-
-#~ Summer Walker
-c = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a50.id, venue_id: v50.id})
+# #~ Michael Buble
+# c = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a50.id, venue_id: v50.id})
 
 
-#~ Lizzo
-c = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a50.id, venue_id: v50.id})
+# #~ Ava Max
+# c = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a50.id, venue_id: v50.id})
 
-#~ Lil Tjay
-c = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a50.id, venue_id: v50.id})
+# #~ Beyonce
+# c = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a50.id, venue_id: v50.id})
 
-#~ Lil Baby
-c = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a50.id, venue_id: v50.id})
+# #~ Peggy Gou
+# c = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a50.id, venue_id: v50.id})
 
-#~ Esperanza Spalding
-c = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a50.id, venue_id: v50.id})
+# #~ Lady Gaga
+# c = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a50.id, venue_id: v50.id})
 
-#~ Burna Boy
-c = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a50.id, venue_id: v50.id})
-
-#~ Brad Mehdlau
-c = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a50.id, venue_id: v50.id})
-
-#~ Wizkid
-c = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a50.id, venue_id: v50.id})
+# #~ Summer Walker
+# c = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a50.id, venue_id: v50.id})
 
 
-#~ Mr Eazi
-c = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a50.id, venue_id: v50.id})
+# #~ Lizzo
+# c = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a50.id, venue_id: v50.id})
 
-#~ Sarkodie
-c = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a50.id, venue_id: v50.id})
+# #~ Lil Tjay
+# c = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a50.id, venue_id: v50.id})
 
-#~ Yemi Alade
-c = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a50.id, venue_id: v50.id})
+# #~ Lil Baby
+# c = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a50.id, venue_id: v50.id})
 
-#~ Kizz Daniel
-c = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a50.id, venue_id: v50.id})
+# #~ Esperanza Spalding
+# c = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a50.id, venue_id: v50.id})
+
+# #~ Burna Boy
+# c = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a50.id, venue_id: v50.id})
+
+# #~ Brad Mehdlau
+# c = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a50.id, venue_id: v50.id})
+
+# #~ Wizkid
+# c = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a50.id, venue_id: v50.id})
+
+
+# #~ Mr Eazi
+# c = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a50.id, venue_id: v50.id})
+
+# #~ Sarkodie
+# c = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a50.id, venue_id: v50.id})
+
+# #~ Yemi Alade
+# c = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a50.id, venue_id: v50.id})
+
+# #~ Kizz Daniel
+# c = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a50.id, venue_id: v50.id})
 
 
 
