@@ -165,6 +165,7 @@ function App() {
           element={
             <EachArtistCard
               artists={artists}
+              setArtists={setArtists}
               concerts={concerts}
               posts={posts}
               setPosts={setPosts}

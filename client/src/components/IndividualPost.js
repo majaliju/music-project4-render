@@ -4,6 +4,8 @@ import { Link, useNavigate } from 'react-router-dom';
 
 function IndividualPost({
   eachPost,
+  artists,
+  setArtists,
   posts,
   setPosts,
   users,

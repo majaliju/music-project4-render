@@ -12,6 +12,7 @@ function EachArtistCard({
   posts,
   setPosts,
   artists,
+  setArtists,
   concerts,
   user,
   handleDelete,
