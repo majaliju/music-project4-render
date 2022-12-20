@@ -14,7 +14,6 @@ function IndividualPost({
 }) {
   let navigate = useNavigate();
 
-  // checks the user.id from the session against the user's ID here
   const [userAllowed, setUserAllowed] = useState(false);
   const [postDeleted, setPostDeleted] = useState(false);
 
