@@ -66,10 +66,13 @@ function ArtistsDisplay({ artists, genres, user, searchTerm, setSearchTerm }) {
                         <h1 class='card-title'>{artist.name}</h1>
                         <p>{artist.genre.name}</p>
                         <div class='card-actions justify-end'>
-                          <button
-                            class='btn btn-primary'
-                            onClick={() => navigate(`/artists/${artist.id}`)}>
-                            view ticket activity
+                          <button>
+                            <Link
+                              class='btn btn-primary'
+                              state={{ artist: artist }}
+                              to={`/artists/${artist.id}`}>
+                              VIEW TICKET ACTIVITY
+                            </Link>
                           </button>
                         </div>
                       </div>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Navigate, useParams, Link } from 'react-router-dom';
+import { useLocation, Navigate, useParams, Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import IndividualPost from './IndividualPost';
 import Loading from './Loading';
@@ -18,6 +18,10 @@ function EachArtistCard({
   handleDelete,
 }) {
   let { id } = useParams();
+  const location = useLocation();
+  let artist = location.state.artist;
+
+  console.log('artist via Link: ', artist);
 
   const thisArtist = artists.find(
     (artist) => parseInt(id) === parseInt(artist.id)
