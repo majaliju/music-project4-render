@@ -134,141 +134,141 @@ a83 = Artist.create({ name: 'Yemi Alade', image: "/artist-images/yemi-alade.jpg"
 a84 = Artist.create({ name: 'Kizz Daniel', image: "/artist-images/kizz-daniel.jpg", genre: 'Afrobeats'})
 
 
-#* the venues in the database
-v1 = Venue.create({name: "Hollywood Bowl", location: "Los Angeles, CA, USA", image: "/venues-images/hollywood-bowl.jpg"})
-v2 = Venue.create({name: "Red Rocks Amphitheatre", location: "Morrison, CO, USA", image: "/venues-images/red-rocks.jpg"})
-v3 = Venue.create({name: "Radio City Music Hall", location: "New York, NY, USA", image: "/venues-images/radio-city-music-hall.jpg"})
-v4 = Venue.create({name: "Tabernacle", location: "Atlanta, GA, USA", image: "/venues-images/tabernacle.jpg"})
-v5 = Venue.create({name: "Gorge Amphitheatre", location: "George, WA, USA", image: "/venues-images/gorge-amphitheatre.jpg"})
-v6 = Venue.create({name: "Grand Ole Opry", location: "Nashville, TN, USA", image: "/venues-images/grand-ole-opry.jpg"})
-v7 = Venue.create({name: "Ryman Auditorium", location: "Nashville, TN, USA", image: "/venues-images/ryman.jpg"})
-v8 = Venue.create({name: "Madison Square Garden", location: "New York, NY, USA", image: "/venues-images/msg.jpg"})
-v9 = Venue.create({name: "The Greek Theatre", location: "Los Angeles, CA, USA", image: "/venues-images/the-greek.png"})
-v9 = Venue.create({name: "Merriweather Post Pavilion", location: "Columbia, MD, USA", image: "/venues-images/merriweather.jpg"})
-v10 = Venue.create({name: "The Fillmore", location: "San Francisco, CA, USA", image: "/venues-images/the-fillmore-san-francisco.jpg"})
-v11 = Venue.create({name: "Bowery Ballroom", location: "New York, NY, USA", image: "/venues-images/bowery-ballroom.jpg"})
-v12 = Venue.create({name: "Metro Chicago", location: "Chicago, IL, USA", image: "/venues-images/metro-chicago.jpg"})
-v13 = Venue.create({name: "Stubbs", location: "Austin, TX, USA", image: "/venues-images/stubbs.jpg"})
-v14 = Venue.create({name: "Great Scott", location: "Boston, MA, USA", image: "/venues-images/great-scott.jpg"})
-v15 = Venue.create({name: "Royal Albert Hall", location: "London, UK", image: "/venues-images/albert-hall.jpg"})
-v16 = Venue.create({name: "Sydney Opera House", location: "Sydney, Australia", image: "/venues-images/sydney-opera-hall.jpg"})
-v17 = Venue.create({name: "The O2 Arena", location: "London, UK", image: "/venues-images/02-arena.jpg"})
-v18 = Venue.create({name: "Eventim Apollo", location: "London, UK", image: "/venues-images/eventim-apollo.jpg"})
-v19 = Venue.create({name: "Dubai Opera House", location: "Dubai, UAE", image: "/venues-images/dubai-opera-house.jpg"})
-v20 = Venue.create({name: "Ronnie Scotts", location: "London, UK", image: "/venues-images/ronnie-scotts.jpg"})
-v21 = Venue.create({name: "Musikverein", location: "Vienna, Austria", image: "/venues-images/musikverein.jpg"})
-v22 = Venue.create({name: "Verona Arena", location: "Verona, Italy", image: "/venues-images/verona-arena.jpg"})
-v23 = Venue.create({name: "Arena of Nîmes", location: "Nîmes, France", image: "/venues-images/arena-of-nimes.jpeg"})
-v24 = Venue.create({name: "Waldbuhne", location: "Berlin, Germany", image: "/venues-images/waldbuhne.jpg"})
-v25 = Venue.create({name: "Yuyintang", location: "Shanghai, China", image: "/venues-images/yuyintang.jpg"})
-v26 = Venue.create({name: "Felsenreitschule", location: "Salzburg, Austria", image: "/venues-images/felsenreitschule.jpg"})
-v27 = Venue.create({name: "Teatro Antico di Taormina", location: "Taormina, Italy", image: "/venues-images/teatro-antico-di-taormina.jpg"})
-v28 = Venue.create({name: "Mao Livehouse", location: "Shanghai, China", image: "/venues-images/mao-livehouse.jpg"})
-v29 = Venue.create({name: "Nippon Budokan", location: "Tokyo, Japan", image: "/venues-images/nippon-budokan.jpg"})
-v30 = Venue.create({name: "Dalhalla", location: "Rättvik, Sweden", image: "/venues-images/dalhalla.jpg"})
-v31 = Venue.create({name: "House of Eternal Return", location: "Sante Fe, New Mexico, USA", image: "/venues-images/house-of-eternal-return.jpg"})
-v32 = Venue.create({name: "Slane Castle", location: "County Meath, Ireland", image: "/venues-images/slane-castle.jpg"})
-v33 = Venue.create({name: "Jay Pritzker Pavilion ", location: "Chicago, IL, USA", image: "/venues-images/jpp-chicago.jpg"})
-v34 = Venue.create({name: "Tower Theater", location: "Philadelphia, PA, USA", image: "/venues-images/tower-theatre.jpg"})
-v35 = Venue.create({name: "El Club", location: "Detroit, MI, USA", image: "/venues-images/el-club-detroit.jpg"})
-v36 = Venue.create({name: "9:30 Club", location: "Washington DC, USA", image: "/venues-images/930-club-dc.jpg"})
-v37 = Venue.create({name: "Brooklyn Steel", location: "Brooklyn, NY, USA", image: "/venues-images/brooklyn-steel.jpeg"})
-v38 = Venue.create({name: "Brooklyn Mirage", location: "Brooklyn, NY, USA", image: "/venues-images/brooklyn-mirage.jpeg"})
-v39 = Venue.create({name: "Ottobar", location: "Baltimore, MD, USA", image: "/venues-images/ottobar.jpg"})
-v40 = Venue.create({name: "The 100 Club", location: "London, UK", image: "/venues-images/100-club-london.jpg"})
-v41 = Venue.create({name: "Sidecar", location: "Barcelona, Spain", image: "/venues-images/sidecar-spain.jpg"})
-v42 = Venue.create({name: "The Drake Underground", location: "Toronto, Canada", image: "/venues-images/the-drake-underground.jpg"})
-v43 = Venue.create({name: "Zapata Café Bar", location: "Berlin, Germany", image: "/venues-images/zapata-berlin.jpg"})
-v44 = Venue.create({name: "Prinzenbar", location: "Berlin, Germany", image: "/venues-images/prinzenbar.jpg"})
-v45 = Venue.create({name: "Vicar Street", location: "Dublin, Ireland", image: "/venues-images/vicar-street.jpg"})
-v46 = Venue.create({name: "Cherry Bar ", location: "Melbourne, Australia", image: "/venues-images/cherry-bar.jpeg"})
-v47 = Venue.create({name: "The Fonda", location: "Los Angeles, CA, USA", image: "/venues-images/the-fonda.jpg"})
-v48 = Venue.create({name: "Jones Beach Theater", location: "Wantagh, NY, USA", image: "/venues-images/jones-beach.jpg"})
-v49 = Venue.create({name: "Preservation Hall", location: "New Orleans, LA, USA", image: "/venues-images/preservation-hall.jpg"})
-v50 = Venue.create({name: "Casbah", location: "San Diego, CA, USA", image: "/venues-images/casbah-san-diego.jpg"})
-v51 = Venue.create({name: "King Tuts Wah Wah Hut", location: "Glasgow, Scotland, UK", image: "/venues-images/king-tuts-glasgow.jpg"})
-v52 = Venue.create({name: "Palacio de Bellas Artes", location: "Mexico City, Mexico", image: "/venues-images/pallacio-mexico-city.jpg"})
-v53 = Venue.create({name: "House of Blues", location: "Boston, MA, USA", image: "/venues-images/house-of-blues-boston.jpg"})
+# #* the venues in the database
+# v1 = Venue.create({venue: "Hollywood Bowl", location: "Los Angeles, CA, USA", image: "/venues-images/hollywood-bowl.jpg"})
+# v2 = Venue.create({venue: "Red Rocks Amphitheatre", location: "Morrison, CO, USA", image: "/venues-images/red-rocks.jpg"})
+# v3 = Venue.create({venue: "Radio City Music Hall", location: "New York, NY, USA", image: "/venues-images/radio-city-music-hall.jpg"})
+# v4 = Venue.create({venue: "Tabernacle", location: "Atlanta, GA, USA", image: "/venues-images/tabernacle.jpg"})
+# v5 = Venue.create({venue: "Gorge Amphitheatre", location: "George, WA, USA", image: "/venues-images/gorge-amphitheatre.jpg"})
+# v6 = Venue.create({venue: "Grand Ole Opry", location: "Nashville, TN, USA", image: "/venues-images/grand-ole-opry.jpg"})
+# v7 = Venue.create({venue: "Ryman Auditorium", location: "Nashville, TN, USA", image: "/venues-images/ryman.jpg"})
+# v8 = Venue.create({venue: "Madison Square Garden", location: "New York, NY, USA", image: "/venues-images/msg.jpg"})
+# v9 = Venue.create({venue: "The Greek Theatre", location: "Los Angeles, CA, USA", image: "/venues-images/the-greek.png"})
+# v9 = Venue.create({venue: "Merriweather Post Pavilion", location: "Columbia, MD, USA", image: "/venues-images/merriweather.jpg"})
+# v10 = Venue.create({venue: "The Fillmore", location: "San Francisco, CA, USA", image: "/venues-images/the-fillmore-san-francisco.jpg"})
+# v11 = Venue.create({venue: "Bowery Ballroom", location: "New York, NY, USA", image: "/venues-images/bowery-ballroom.jpg"})
+# v12 = Venue.create({venue: "Metro Chicago", location: "Chicago, IL, USA", image: "/venues-images/metro-chicago.jpg"})
+# v13 = Venue.create({venue: "Stubbs", location: "Austin, TX, USA", image: "/venues-images/stubbs.jpg"})
+# v14 = Venue.create({venue: "Great Scott", location: "Boston, MA, USA", image: "/venues-images/great-scott.jpg"})
+# v15 = Venue.create({venue: "Royal Albert Hall", location: "London, UK", image: "/venues-images/albert-hall.jpg"})
+# v16 = Venue.create({venue: "Sydney Opera House", location: "Sydney, Australia", image: "/venues-images/sydney-opera-hall.jpg"})
+# v17 = Venue.create({venue: "The O2 Arena", location: "London, UK", image: "/venues-images/02-arena.jpg"})
+# v18 = Venue.create({venue: "Eventim Apollo", location: "London, UK", image: "/venues-images/eventim-apollo.jpg"})
+v19 = Venue.create({venue: "Dubai Opera House", location: "Dubai, UAE", image: "/venues-images/dubai-opera-house.jpg"})
+v20 = Venue.create({venue: "Ronnie Scotts", location: "London, UK", image: "/venues-images/ronnie-scotts.jpg"})
+v21 = Venue.create({venue: "Musikverein", location: "Vienna, Austria", image: "/venues-images/musikverein.jpg"})
+v22 = Venue.create({venue: "Verona Arena", location: "Verona, Italy", image: "/venues-images/verona-arena.jpg"})
+v23 = Venue.create({venue: "Arena of Nîmes", location: "Nîmes, France", image: "/venues-images/arena-of-nimes.jpeg"})
+v24 = Venue.create({venue: "Waldbuhne", location: "Berlin, Germany", image: "/venues-images/waldbuhne.jpg"})
+v25 = Venue.create({venue: "Yuyintang", location: "Shanghai, China", image: "/venues-images/yuyintang.jpg"})
+v26 = Venue.create({venue: "Felsenreitschule", location: "Salzburg, Austria", image: "/venues-images/felsenreitschule.jpg"})
+v27 = Venue.create({venue: "Teatro Antico di Taormina", location: "Taormina, Italy", image: "/venues-images/teatro-antico-di-taormina.jpg"})
+v28 = Venue.create({venue: "Mao Livehouse", location: "Shanghai, China", image: "/venues-images/mao-livehouse.jpg"})
+v29 = Venue.create({venue: "Nippon Budokan", location: "Tokyo, Japan", image: "/venues-images/nippon-budokan.jpg"})
+v30 = Venue.create({venue: "Dalhalla", location: "Rättvik, Sweden", image: "/venues-images/dalhalla.jpg"})
+v31 = Venue.create({venue: "House of Eternal Return", location: "Sante Fe, New Mexico, USA", image: "/venues-images/house-of-eternal-return.jpg"})
+v32 = Venue.create({venue: "Slane Castle", location: "County Meath, Ireland", image: "/venues-images/slane-castle.jpg"})
+v33 = Venue.create({venue: "Jay Pritzker Pavilion ", location: "Chicago, IL, USA", image: "/venues-images/jpp-chicago.jpg"})
+v34 = Venue.create({venue: "Tower Theater", location: "Philadelphia, PA, USA", image: "/venues-images/tower-theatre.jpg"})
+v35 = Venue.create({venue: "El Club", location: "Detroit, MI, USA", image: "/venues-images/el-club-detroit.jpg"})
+v36 = Venue.create({venue: "9:30 Club", location: "Washington DC, USA", image: "/venues-images/930-club-dc.jpg"})
+v37 = Venue.create({venue: "Brooklyn Steel", location: "Brooklyn, NY, USA", image: "/venues-images/brooklyn-steel.jpeg"})
+v38 = Venue.create({venue: "Brooklyn Mirage", location: "Brooklyn, NY, USA", image: "/venues-images/brooklyn-mirage.jpeg"})
+v39 = Venue.create({venue: "Ottobar", location: "Baltimore, MD, USA", image: "/venues-images/ottobar.jpg"})
+v40 = Venue.create({venue: "The 100 Club", location: "London, UK", image: "/venues-images/100-club-london.jpg"})
+v41 = Venue.create({venue: "Sidecar", location: "Barcelona, Spain", image: "/venues-images/sidecar-spain.jpg"})
+v42 = Venue.create({venue: "The Drake Underground", location: "Toronto, Canada", image: "/venues-images/the-drake-underground.jpg"})
+v43 = Venue.create({venue: "Zapata Café Bar", location: "Berlin, Germany", image: "/venues-images/zapata-berlin.jpg"})
+v44 = Venue.create({venue: "Prinzenbar", location: "Berlin, Germany", image: "/venues-images/prinzenbar.jpg"})
+v45 = Venue.create({venue: "Vicar Street", location: "Dublin, Ireland", image: "/venues-images/vicar-street.jpg"})
+v46 = Venue.create({venue: "Cherry Bar ", location: "Melbourne, Australia", image: "/venues-images/cherry-bar.jpeg"})
+v47 = Venue.create({venue: "The Fonda", location: "Los Angeles, CA, USA", image: "/venues-images/the-fonda.jpg"})
+v48 = Venue.create({venue: "Jones Beach Theater", location: "Wantagh, NY, USA", image: "/venues-images/jones-beach.jpg"})
+v49 = Venue.create({venue: "Preservation Hall", location: "New Orleans, LA, USA", image: "/venues-images/preservation-hall.jpg"})
+v50 = Venue.create({venue: "Casbah", location: "San Diego, CA, USA", image: "/venues-images/casbah-san-diego.jpg"})
+v51 = Venue.create({venue: "King Tuts Wah Wah Hut", location: "Glasgow, Scotland, UK", image: "/venues-images/king-tuts-glasgow.jpg"})
+v52 = Venue.create({venue: "Palacio de Bellas Artes", location: "Mexico City, Mexico", image: "/venues-images/pallacio-mexico-city.jpg"})
+v53 = Venue.create({venue: "House of Blues", location: "Boston, MA, USA", image: "/venues-images/house-of-blues-boston.jpg"})
 
 #* the concerts in the database w/ their posts
 
 #~ Adele
-c1 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a1.id, venue: 'Hollywood Bowl', location: 'Los Angeles, CA, USA', image: "/venues-images/hollywood-bowl.jpg"})
+c1 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a1.id, venue: 'Hollywood Bowl', location: 'Los Angeles, CA, USA', image: "/venues-images/hollywood-bowl.jpg"})venue: "Red Rocks Amphitheatre", location: "Morrison, CO, USA", image: "/venues-images/red-rocks.jpg"
   p1 = Post.create({comment_body: "2 tickets, $100 total OBO -- CHEAPEST YOU'LL EVER FIND FOR ADELE!!", for_sale: true, tickets: 2, user_id: u1.id, concert_id: c1.id})
 
 #~ John Legend
-c2 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a2.id, venue_id: v2.id})
+c2 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a2.id, venue: "Red Rocks Amphitheatre", location: "Morrison, CO, USA", image: "/venues-images/red-rocks.jpg"})
   p2 = Post.create({comment_body: "Need 3 tickets badly! Willing to pay $400 total for 3 tix", for_sale: false, tickets: 3, user_id: u2.id, concert_id: c2.id})
 
 #~ Lil Uzi Vert
-c3 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a3.id, venue_id: v3.id})
+c3 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a3.id, venue: "Radio City Music Hall", location: "New York, NY, USA", image: "/venues-images/radio-city-music-hall.jpg"})
 p3 = Post.create({comment_body: "All 3 tickets together = $250, one ticket = $100", for_sale: true, tickets: 3, user_id: u4.id, concert_id: c3.id})
 
 #~ Alicia Keys
-c4 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a4.id, venue_id: v4.id})
+c4 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a4.id, venue: "Tabernacle", location: "Atlanta, GA, USA", image: "/venues-images/tabernacle.jpg"})
 p4 = Post.create({comment_body: "My daughter loves him (dont ask), will pay up to $500 per ticket", for_sale: false, tickets: 2, user_id: u4.id, concert_id: c3.id})
 
 #~ Brent Faiyaz
-c5 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a5.id, venue_id: v5.id})
+c5 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a5.id, venue: "Gorge Amphitheatre", location: "George, WA, USA", image: "/venues-images/gorge-amphitheatre.jpg"})
 p5 = Post.create({comment_body: "Email me with your best offer. I'm open.", for_sale: true, tickets: 1, user_id: u5.id, concert_id: c5.id})
 
 #~ Freddie Gibbs
-c6 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a6.id, venue_id: v6.id})
+c6 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a6.id, venue: "Grand Ole Opry", location: "Nashville, TN, USA", image: "/venues-images/grand-ole-opry.jpg"})
 p6 = Post.create({comment_body: "TICKETS SOLD ONLY AS TRIO -- CONTACT FOR PRICE", for_sale: true, tickets: 3, user_id: u6.id, concert_id: c6.id})
 
 #~ Ed Sheeran
-c7 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a7.id, venue_id: v7.id})
+c7 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a7.id, venue: "Ryman Auditorium", location: "Nashville, TN, USA", image: "/venues-images/ryman.jpg"})
 p7 = Post.create({comment_body: "I NEEEEEED TICKETS, PLEASE CONTACT ME AT 777-777-7777", for_sale: false, tickets: 2, user_id: u7.id, concert_id: c7.id})
 
 #~ Chris Stapleton
-c8 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a8.id, venue_id: v8.id})
+c8 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a8.id, venue: "Madison Square Garden", location: "New York, NY, USA", image: "/venues-images/msg.jpg"})
 p8 = Post.create({comment_body: "best offer only! email me", for_sale: true, tickets: 2, user_id: u2.id, concert_id: c8.id})
 
 #~ Lil Wayne
-c9 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a9.id, venue_id: v9.id})
+c9 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a9.id, venue: "The Greek Theatre", location: "Los Angeles, CA, USA", image: "/venues-images/the-greek.png"})
 
 #~Bad Bunny
-c10 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a10.id, venue_id: v10.id})
+c10 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a10.id, venue: "Merriweather Post Pavilion", location: "Columbia, MD, USA", image: "/venues-images/merriweather.jpg"})
 p9 = Post.create({comment_body: "each ticket is $65, only selling one a piece", for_sale: true, tickets: 3, user_id: u3.id, concert_id: c10.id})
 
 
 #~ Weeknd
-c11 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a11.id, venue_id: v11.id})
+c11 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a11.id, venue: "The Fillmore", location: "San Francisco, CA, USA", image: "/venues-images/the-fillmore-san-francisco.jpg"})
 p10 = Post.create({comment_body: "Selling both tickets together, email for price.", for_sale: true, tickets: 2, user_id: u4.id, concert_id: c11.id})
 p19 = Post.create({comment_body: "I LOVE THE WEEKEND I NEED TICKETS PLEASE HMU!!!!!", for_sale: false, tickets: 1, user_id: u9.id, concert_id:c11.id})
 
 #~ Doja Cat
-c12 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a12.id, venue_id: v12.id})
+c12 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a12.id, venue: "Bowery Ballroom", location: "New York, NY, USA", image: "/venues-images/bowery-ballroom.jpg"})
 p11 = Post.create({comment_body: "Hey I'm looking for 3 tickets together! Willing to pay over $400 for all 3", for_sale: false, tickets: 3, user_id: u5.id, concert_id: c12.id})
 
 #~ Dua Lipa
-c13 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a13.id, venue_id: v13.id})
+c13 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a13.id, venue: "Metro Chicago", location: "Chicago, IL, USA", image: "/venues-images/metro-chicago.jpg"})
 p12 = Post.create({comment_body: "Hiii does anyone have 2 tickets together for this show?", for_sale: false, tickets: 2, user_id: u6.id, concert_id: c13.id})
 
 #~ Billie Eilish
-c14 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a14.id, venue_id: v14.id})
+c14 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a14.id, venue: "Stubbs", location: "Austin, TX, USA", image: "/venues-images/stubbs.jpg"})
 p13 = Post.create({comment_body: "3 tix, $100+ each OBO hmu", for_sale: true, tickets: 3, user_id: u7.id, concert_id: c14.id})
 p14 = Post.create({comment_body: "both tickets sold together only!", for_sale: true, tickets: 2, user_id: u1.id, concert_id: c14.id})
 
 #~ Lil Durk
-c15 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a15.id, venue_id: v15.id})
+c15 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a15.id, venue: "Great Scott", location: "Boston, MA, USA", image: "/venues-images/great-scott.jpg"})
 p15 = Post.create({comment_body: "neeeeeed 2 tix, please lmk", for_sale: false, tickets: 2, user_id: u2.id, concert_id: c15.id})
 
 #~ Giveon
-c16 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a16.id, venue_id: v16.id})
+c16 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a16.id, venue: "Royal Albert Hall", location: "London, UK", image: "/venues-images/albert-hall.jpg"})
 p16 = Post.create({comment_body: "looking for a ticket", for_sale: false, tickets: 1, user_id: u3.id, concert_id: c16.id})
 
 
 #~ SZA
-c17 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a17.id, venue_id: v17.id})
+c17 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a17.id, venue: "Sydney Opera House", location: "Sydney, Australia", image: "/venues-images/sydney-opera-hall.jpg"})
 p17 = Post.create({comment_body: "selling 2 tickets!! hmu for price", for_sale: true, tickets: 2, user_id: u4.id, concert_id: c17.id})
 
 #~ Tyler the Creator
-c18 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a18.id, venue_id: v18.id})
+c18 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a18.id, venue: "The O2 Arena", location: "London, UK", image: "/venues-images/02-arena.jpg"})
 p18 = Post.create({comment_body: "Hi I'm selling 4 tickets, altogether. No seperate tickets being sold. Contact me", for_sale: true, tickets: 4, user_id: u5.id, concert_id: c18.id})
 
 #~ Morgan Wallen
-c19 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a19.id, venue_id: v19.id})
+c19 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a19.id, venue: "Eventim Apollo", location: "London, UK", image: "/venues-images/eventim-apollo.jpg"})
 p20 = Post.create({comment_body: "Selling 6 tickets. Contact me via email ONLY. TROLLS WILL BE BLOCKED", for_sale: true, tickets: 6, user_id: u23.id, concert_id: c19.id})
 
 # #~ Arctic Monkeys
