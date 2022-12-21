@@ -133,13 +133,13 @@ a82 = Artist.create({ name: 'Sarkodie', image: "/artist-images/sarkodie.jpg", ge
 a83 = Artist.create({ name: 'Yemi Alade', image: "/artist-images/yemi-alade.jpg", genre: 'Afrobeats'})
 a84 = Artist.create({ name: 'Kizz Daniel', image: "/artist-images/kizz-daniel.jpg", genre: 'Afrobeats'})
 
+#* lets try again, frustrating
 
 
 #* the concerts in the database w/ their posts
 
 #~ Adele
 c1 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), location: "Hollywood Bowl", image: "/venues-images/hollywood-bowl.jpg", artist_id: a1.id,})
-
   p1 = Post.create({comment_body: "2 tickets, $100 total OBO -- CHEAPEST YOU'LL EVER FIND FOR ADELE!!", for_sale: true, tickets: 2, user_id: u1.id, concert_id: c1.id})
 
 #~ John Legend
