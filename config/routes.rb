@@ -6,9 +6,9 @@ Rails.application.routes.draw do
   #& get all the artists-genres-venues-concerts-posts; to save to each state
   get '/artists', to: "artists#index"
   get '/artists/:id', to: "artists#show"
-  get '/genres', to: "genres#index"
-  get '/venues', to: "venues#index"
-  get '/concerts', to: "concerts#index"
+  # get '/genres', to: "genres#index"
+  # get '/venues', to: "venues#index"
+  # get '/concerts', to: "concerts#index"
 
 
 
