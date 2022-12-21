@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 2022_12_02_013833) do
     t.datetime "date"
     t.string "venue"
     t.string "location"
+    t.string "image"
     t.integer "artist_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
